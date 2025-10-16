@@ -28,25 +28,28 @@
                 Login
             </a>
         </li>
+    </ul>
+
+    <ul id="ul-direita-navbar">
         <li>
             <a href="">
-                <img width="25" height="25" src="https://img.icons8.com/ios/50/facebook-f.png" alt="facebook-f" />
+                <img width="30" height="30" src="https://img.icons8.com/ios/50/facebook-f.png" alt="facebook-f" />
             </a>
         </li>
         <li>
             <a href="">
-                <img width="25" height="25" src="https://img.icons8.com/ios/50/tiktok--v1.png" alt="tiktok--v1" />
+                <img width="30" height="30" src="https://img.icons8.com/ios/50/tiktok--v1.png" alt="tiktok--v1" />
             </a>
         </li>
         <li>
             <a href="">
-                <img width="25" height="25" src="https://img.icons8.com/ios/50/instagram-new--v1.png"
+                <img width="30" height="30" src="https://img.icons8.com/ios/50/instagram-new--v1.png"
                     alt="instagram-new--v1" />
             </a>
         </li>
         <li>
             <a href="">
-                <img width="25" height="25" src="https://img.icons8.com/ios/50/accessibility2.png"
+                <img width="30" height="30" src="https://img.icons8.com/ios/50/accessibility2.png"
                     alt="accessibility2" />
             </a>
         </li>
