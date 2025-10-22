@@ -6,7 +6,7 @@
                 <img src="./../../assets/img/dalmata.png" alt="" id="botesquerda">
             </div>
             <div id="meio">
-                <img src="./../../assets/img/conectaPet.png" alt="Conecta Pet">
+                <img id="logo" src="./../../assets/img/conectaPet.png" alt="Conecta Pet">
                 <div>
                     <p>Aqui cada animal tem a chance de recomeçar: nosso marketplace conecta pessoas dispostas a doar
                         com
@@ -25,7 +25,7 @@
             <div id="direita">
                 <img src="./../../assets/img/coelho.png" alt="" id="topdireita">
                 <img src="./../../assets/img/gato.png" alt="" id="meiodireita">
-                <img src="./../../assets/img/cachorro.png" alt="" id="botdireita">
+                <!-- <img src="./../../assets/img/cachorro.png" alt="" id="botdireita"> -->
             </div>
         </section>
 
