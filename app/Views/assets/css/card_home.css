@@ -1,0 +1,64 @@
+.card-home {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  border-radius: 3%;
+
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+
+  position: relative;
+  transition: 0.3s linear;
+  .animal-card {
+    margin: auto;
+    width: 100%;
+    height: 80%;
+    object-fit: fill;
+  }
+
+  .texto-card-home {
+    padding: 1rem;
+
+    h3 {
+      font-size: 25px;
+    }
+    a {
+      text-decoration: none;
+      font-size: 25px;
+      transition: 0.3s linear;
+    }
+  }
+
+  &:hover {
+    scale: 1.05;
+    cursor: pointer;
+
+    transition: 0.3s linear;
+
+    z-index: 100;
+  }
+
+  a:hover {
+    color: red;
+    transition: 0.3s linear;
+  }
+
+  .fav {
+    width: 25%;
+    height: 25%;
+    position: absolute;
+
+    object-fit: contain;
+    top: 0;
+    right: 10px;
+    transition: 0.3s linear;
+
+    &:hover {
+      scale: 1.05;
+      transition: 0.3s linear;
+
+      filter: drop-shadow(0 0px 6px rgba(0, 0, 0, 1));
+    }
+  }
+}

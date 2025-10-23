@@ -1,5 +1,7 @@
 @import url("./nav.css");
 @import url("./header_home.css");
+@import url("./home.css");
+@import url("./card_home.css");
 
 * {
   box-sizing: border-box;
