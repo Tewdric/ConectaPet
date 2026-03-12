@@ -2,6 +2,7 @@
 @import url("./header_home.css");
 @import url("./home.css");
 @import url("./card_home.css");
+@import url("./login.css");
 
 * {
   box-sizing: border-box;

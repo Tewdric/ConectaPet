@@ -1,14 +1,25 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
+
 <nav class="navbar">
     <div class="navbar-logo">
         <img src="./../../assets/img/logo.png" alt="Logo">
     </div>
 
     <ul class="navbar-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="">Sobre</a></li>
-        <li><a href="">Animais</a></li>
-        <li><a href="">Contato</a></li>
-        <li><a href="">Login</a></li>
+        <li><a href="./../../pages/user/home.php">Home</a></li>
+
+        <?php if ($currentPage !== 'login.php') : ?>
+            <li><a href="sobre.php">Sobre</a></li>
+        <?php endif; ?>
+
+        <li><a href="animais.php">Animais</a></li>
+
+        <?php if ($currentPage !== 'login.php') : ?>
+            <li><a href="contato.php">Contato</a></li>
+            <li><a href="./../../pages/user/login.php">Login</a></li>
+        <?php endif; ?>
     </ul>
 
     <ul class="navbar-social">
