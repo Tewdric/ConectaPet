@@ -12,39 +12,38 @@ include './../../components/head/head.php';
     ?>
 
     <section id="login-form">
-             <!-- LADO ESQUERDO-->
-            <div id="esquerda">
-                <img src="./../../assets/img/grupo_cacho.png" alt="" id="lado_esquedo">
+        <!-- LADO ESQUERDO-->
+        <div id="esquerda">
+            <img src="./../../assets/img/grupo_cacho.png" alt="" id="lado_esquedo">
 
-                <p>Olá, Usuário! 🐾
-                    Bem-vindo ao Conecta Pet! 
-                    Entre para continuar ajudando 
-                    nossos amigos de quatro patas.</p>
-            </div>
+            <p>Olá, Usuário! 🐾
+                Bem-vindo ao Conecta Pet!
+                Entre para continuar ajudando
+                nossos amigos de quatro patas.</p>
+        </div>
 
-             <!-- LADO direito -->
-            <div class="direita">
-                <h1>Login</h1>
-                <form method="POST" action="">
+        <!-- LADO direito -->
+        <div class="direita">
+            <h1>Login</h1>
+            <form method="POST" action="">
 
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email">
+                <label for="email">E-mail</label>
+                <input type="email" name="email">
 
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha">
-
-                    <a href="#">Esqueceu a senha?</a>
-                    <div class="botoes">
-                        <button type="submit" class="bt-cadastro">
-                            Cadastrar-se</button>
+                <label for="senha">Senha</label>
+                <input type="password" name="senha">
                             
+                <a href="#">Esqueceu a senha?</a>
+                <div class="botoes">
+                    <button type="submit" class="bt-cadastro">
+                        Cadastrar-se</button>
 
-                        <button type="submit" class="bt-entrar">
-                            Entrar 🐾
-                        </button>
-                    </div>
-                    
-                </form>
-            </div>
-    </section>   
+                    <button type="submit" class="bt-entrar">
+                        Entrar 🐾
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
 </body>
