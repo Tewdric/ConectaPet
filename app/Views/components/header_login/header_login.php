@@ -1,17 +1,5 @@
-<?php
-$titulo = 'Login';
-?>
-<?php
-include './../../components/head/head.php';
-?>
-
 <body>
-    <!-- navbar -->
-    <?php
-    include './../../components/nav/navBar.php';
-    ?>
-
-    <section id="login-form">
+        <section id="login-form">
              <!-- LADO ESQUERDO-->
             <div id="esquerda">
                 <img src="./../../assets/img/grupo_cacho.png" alt="" id="lado_esquedo">
@@ -45,5 +33,5 @@ include './../../components/head/head.php';
                     
                 </form>
             </div>
-    </section>   
-</body>
+        </select>
+</body>            
