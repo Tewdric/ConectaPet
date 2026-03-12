@@ -51,9 +51,35 @@ include './../../components/head/head.php';
 
         </div>
 
-        <button type="submit" class="bt-entrar">
-                        Entrar 🐾
-                    </button>
+
+        <div class="upload-area">
+
+            <div class="upload-icon">
+                <img src="../../assets/img/icon-foto.png" alt="">
+            </div>
+
+            <p>
+                Selecione uma imagem para foto de perfil
+            </p>
+
+            <input type="file" name="foto">
+
+        </div>
+
+
+        <div class="botoes">
+
+            <button type="submit" class="btn-voltar">
+                Voltar
+            </button>
+
+            <button type="submit" class="btn-concluir">
+                Concluir 🐾
+            </button>
+
+        </div>
+
+
 
     </form>
     <?php

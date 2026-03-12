@@ -4,6 +4,7 @@
 @import url("./card_home.css");
 @import url("./login.css");
 @import url("./modal.css");
+@import url("./questionario.css");
 
 
 * {
@@ -16,3 +17,4 @@
 body {
   overflow-x: hidden;
 }
+

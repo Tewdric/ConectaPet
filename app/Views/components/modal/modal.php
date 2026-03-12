@@ -1,3 +1,9 @@
+<?php
+$titulo = 'modal';
+include './../../components/head/head.php';
+?>
+
+
 <body>
     <div class="modal-bg">
 

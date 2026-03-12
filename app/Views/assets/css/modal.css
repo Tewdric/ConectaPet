@@ -16,6 +16,11 @@ FUNDO DO MODAL
 ========================= */
 
 .modal-bg{
+    
+    background-size:cover;
+    padding-top:80px;
+
+
     width:100%;
     min-height:100vh;
 
@@ -29,8 +34,7 @@ FUNDO DO MODAL
     display:flex;
     justify-content:center;
     align-items:center;
-
-    padding-top:80px;
+    
 }
 
 
@@ -127,13 +131,13 @@ UPLOAD FOTO
     display:flex;
     align-items:center;
     gap:15px;
+    margin-top:15px;
 
-    margin-top:10px;
 }
 
 .upload-icon{
-    width:60px;
-    height:60px;
+    width:40px;
+    height:50px;
 
     border-radius:50%;
     border:3px solid black;
@@ -142,7 +146,7 @@ UPLOAD FOTO
     justify-content:center;
     align-items:center;
 
-    font-size:24px;
+    font-size:20px;
 }
 
 
@@ -152,32 +156,32 @@ BOTÕES
 
 .botoes-modal{
     display:flex;
-    justify-content:space-between;
-
+    gap:20px;
     margin-top:20px;
+    
 }
-
-.btn-voltar{
-    padding:10px 25px;
-
-    border-radius:20px;
-    border:1px solid gray;
-
-    background:#f2f2f2;
-
-    cursor:pointer;
-}
-
 .btn-concluir{
-    padding:10px 25px;
+    flex:1;
 
-    border-radius:20px;
+    padding:12px;
+
+    border-radius:25px;
     border:none;
 
     background:#f4a623;
 
     font-weight:600;
-    cursor:pointer;
+}
+
+.btn-voltar{
+    flex:1;
+
+    padding:12px;
+
+    border-radius:25px;
+
+    border:1px solid gray;
+    background:#f2f2f2;
 }
 
 
