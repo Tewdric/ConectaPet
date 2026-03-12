@@ -1,0 +1,189 @@
+/* =========================
+RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+/* =========================
+FUNDO DO MODAL
+========================= */
+
+.modal-bg{
+    width:100%;
+    height:100vh;
+
+    background-image:url('../img/fundo.png');
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+}
+
+
+/* =========================
+CAIXA DO MODAL
+========================= */
+
+.modal-box{
+    width:650px;
+    background:#e5e5e5;
+
+    border-radius:20px;
+    padding:40px;
+
+    box-shadow:0px 10px 30px rgba(0,0,0,0.25);
+    
+}
+
+
+/* =========================
+FORMULÁRIO
+========================= */
+
+.form-cadastro{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+
+/* =========================
+CAMPOS
+========================= */
+
+.campo{
+    display:flex;
+    flex-direction:column;
+}
+
+.campo label{
+    font-weight:600;
+    font-size:14px;
+}
+
+.campo input{
+    width:100%;
+    padding:12px;
+
+    border-radius:10px;
+    border:2px solid transparent;
+
+    background:#f0c46a;
+
+    margin-top:5px;
+
+    transition:0.3s;
+}
+
+
+/* =========================
+EFEITO QUANDO CLICA
+========================= */
+
+.campo input:focus{
+    outline:none;
+    border:2px solid #f4a623;
+    background:#ffd88a;
+}
+
+
+/* =========================
+SENHAS LADO A LADO
+========================= */
+
+.senha-group{
+    display:flex;
+    gap:20px;
+}
+
+.input-box{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+
+/* =========================
+UPLOAD FOTO
+========================= */
+
+.upload-area{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-top:10px;
+}
+
+.upload-icon{
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+    border:3px solid black;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+}
+
+
+/* =========================
+BOTÕES
+========================= */
+
+.botoes-modal{
+    display:flex;
+    justify-content:space-between;
+
+    margin-top:20px;
+}
+
+.btn-voltar{
+    padding:10px 25px;
+
+    border-radius:20px;
+    border:1px solid gray;
+
+    background:#f2f2f2;
+
+    cursor:pointer;
+}
+
+.btn-concluir{
+    padding:10px 25px;
+
+    border-radius:20px;
+    border:none;
+
+    background:#f4a623;
+
+    font-weight:600;
+    cursor:pointer;
+}
+
+
+/* =========================
+HOVER BOTÕES
+========================= */
+
+.btn-voltar:hover{
+    background:#e2e2e2;
+}
+
+.btn-concluir:hover{
+    background:#e5961f;
+}

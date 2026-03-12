@@ -37,6 +37,7 @@ include './../../components/head/head.php';
                     <div class="botoes">
                         <button type="submit" class="bt-cadastro">
                             Cadastrar-se</button>
+                            
 
                         <button type="submit" class="bt-entrar">
                             Entrar 🐾

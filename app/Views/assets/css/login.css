@@ -37,7 +37,7 @@
 
 .direita{
     width:50%;
-    background:#e6b76a;
+    background: rgba(255, 212, 131, 1);
     padding:60px;
 
     display:flex;
@@ -47,7 +47,7 @@
 
 .direita h1{
     text-align:center;
-    color:white;
+    color:rgb(0, 0, 0);
     font-size:36px;
     margin-bottom:30px;
 }
