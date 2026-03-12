@@ -51,6 +51,10 @@ include './../../components/head/head.php';
 
         </div>
 
+        <button type="submit" class="bt-entrar">
+                        Entrar 🐾
+                    </button>
+
     </form>
     <?php
     $modalConteudo = ob_get_clean();
