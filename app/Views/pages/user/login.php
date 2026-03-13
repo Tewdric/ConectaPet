@@ -28,10 +28,10 @@ include './../../components/head/head.php';
             <form method="POST" action="">
 
                 <label for="email">E-mail</label>
-                <input type="email" name="email">
+                <input type="email" name="email" placeholder="Digite seu email " required>
 
                 <label for="senha">Senha</label>
-                <input type="password" name="senha">
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
 
 
             </form>

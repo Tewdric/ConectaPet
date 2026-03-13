@@ -20,6 +20,8 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <li><a href="contato.php">Contato</a></li>
             <li><a href="./../../pages/user/login.php">Login</a></li>
         <?php endif; ?>
+
+        
     </ul>
 
     <ul class="navbar-social">

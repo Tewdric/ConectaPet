@@ -17,9 +17,9 @@
 
     <div class="nav-right">
 
-        <img src="../../assets/img/icon-acessibilidade.png" class="nav-icon">
+        <img src="../../assets/img/acessibilidade.png" class="nav-icon">
 
-        <img src="../../assets/img/icon-user.png" class="nav-icon">
+        <img src="../../assets/img/user.png" class="nav-icon">
 
     </div>
 

@@ -219,3 +219,81 @@ HOVER BOTÕES
 .btn-concluir:hover {
     background: #e5961f;
 }
+
+
+
+/*  MODAL  INFO- ANIMAIS */
+/* card principal */
+.animal-card{
+    max-width:1100px;
+    margin:40px auto;
+    background:#f3b21c;
+    padding:20px;
+    border-radius:8px;
+}
+
+/* container branco único */
+.animal-container{
+    display:flex;
+    gap:25px;
+    align-items:stretch;
+    background:white;
+    padding:20px;
+    border-radius:8px;
+}
+
+/* imagem */
+.animal-img img{
+    width:420px;
+    height:420px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* caixa de texto */
+.animal-info{
+    padding:10px 5px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    flex:1;
+}
+
+/* textos */
+.animal-info p{
+    line-height:1.6;
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+/* contato */
+.contato{
+    display:flex;
+    gap:60px;
+    margin-top:10px;
+}
+
+.contato a{
+    color:#1a73e8;
+    text-decoration:none;
+}
+
+.contato a:hover{
+    text-decoration:underline;
+}
+
+/* botão */
+.btn-adotar{
+    background:#f3b21c;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    align-self:flex-end;
+}
+
+.btn-adotar:hover{
+    background:#e19f0c;
+}

@@ -19,34 +19,34 @@ include './../../components/head/head.php';
 
         <div class="campo">
             <label>Nome Completo</label>
-            <input type="text">
+            <input type="text" placeholder="Digite seu nome" required >
         </div>
 
         <div class="campo">
             <label>CPF</label>
-            <input type="text">
+            <input type="text" placeholder="Digite seu CPF" >
         </div>
 
         <div class="campo">
             <label>Telefone</label>
-            <input type="text">
+            <input type="text" placeholder="Digite seu telefone" >
         </div>
 
         <div class="campo">
             <label>E-mail</label>
-            <input type="email">
+            <input type="email" placeholder="Digite seu email" required>
         </div>
 
         <div class="senha-group">
 
             <div class="input-box">
                 <label>Senha</label>
-                <input class="input-cadastro" type="password">
+                <input class="input-cadastro" type="password" placeholder="Digite sua senha"  required>
             </div>
 
             <div class="input-box">
                 <label>Confirmar Senha</label>
-                <input class="input-cadastro" type="password">
+                <input class="input-cadastro" type="password" placeholder="Confirme sua senha" required>
             </div>
 
         </div>

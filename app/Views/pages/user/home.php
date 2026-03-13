@@ -2,8 +2,8 @@
 $titulo = 'Home';
 ?>
 <?php
-        include './../../components/head/head.php';
-    ?>
+    include './../../components/head/head.php';
+?>
 
 <body>
     <!-- navbar -->
