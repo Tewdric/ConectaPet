@@ -32,18 +32,20 @@ include './../../components/head/head.php';
 
                 <label for="senha">Senha</label>
                 <input type="password" name="senha">
-                            
-                <a href="#">Esqueceu a senha?</a>
-                <div class="botoes">
-                    <button type="submit" class="bt-cadastro">
-                        Cadastrar-se</button>
 
-                    <button type="submit" class="bt-entrar">
-                        Entrar 🐾
-                    </button>
-                </div>
 
             </form>
+            <a href="#">Esqueceu a senha?</a>
+            <div class="botoes">
+                <a href="./cadastro.php">
+                    <button type="submit" class="bt-cadastro">
+                        Cadastrar-se</button>
+                </a>
+
+                <button type="submit" class="bt-entrar">
+                    Entrar 🐾
+                </button>
+            </div>
         </div>
     </section>
 </body>

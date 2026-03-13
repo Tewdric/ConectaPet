@@ -103,46 +103,44 @@ include './../../components/head/head.php';
         <div class="radio-group">
 
             <label class="opcao">
-                <input type="checkbox">
+                <input class="input-questionario" type="checkbox">
                 Quintal
             </label>
 
             <label class="opcao">
-                <input type="checkbox">
+                <input class="input-questionario" type="checkbox">
                 Jardim
             </label>
 
             <label class="opcao">
-                <input type="checkbox">
+                <input class="input-questionario" type="checkbox">
                 Área externa
             </label>
 
             <label class="opcao">
-                <input type="checkbox">
+                <input class="input-questionario" type="checkbox">
                 Telas nas janelas
             </label>
 
             <label class="opcao">
-                <input type="checkbox">
+                <input class="input-questionario" type="checkbox">
                 Nenhum dos anteriores
             </label>
 
         </div>
 
-
-        <div class="botoes-modal">
-
-            <button class="btn-voltar">
-                Voltar
-            </button>
-
-            <button class="btn-concluir">
-                Continuar 🐾
-            </button>
-
-        </div>
-
     </form>
+    <div class="botoes-modal">
+
+        <button class="btn-voltar">
+            Voltar
+        </button>
+
+        <a href="./familia.php"><button class="btn-concluir">
+                Continuar 🐾
+            </button></a>
+
+    </div>
 
     <?php
     $modalConteudo = ob_get_clean();

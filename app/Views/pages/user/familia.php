@@ -106,21 +106,18 @@ include './../../components/head/head.php';
 
         </div>
 
+    </form>
+    <div class="botoes-modal">
 
-        <div class="botoes-modal">
-
+        <a href="./questionario.php">
             <button class="btn-voltar">
                 Voltar
-            </button>
+            </button></a>
 
-            <button class="btn-concluir">
+        <a href="./expe-animais.php"><button class="btn-concluir">
                 Continuar 🐾
-            </button>
-
-        </div>
-
-
-    </form>
+            </button></a>
+    </div>
 
     <?php
     $modalConteudo = ob_get_clean();

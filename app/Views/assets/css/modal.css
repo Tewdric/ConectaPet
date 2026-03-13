@@ -2,12 +2,12 @@
 RESET
 ========================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    
+
 }
 
 
@@ -15,26 +15,26 @@ RESET
 FUNDO DO MODAL
 ========================= */
 
-.modal-bg{
-    
-    background-size:cover;
-    padding-top:80px;
+.modal-bg {
+
+    background-size: cover;
+    padding-top: 80px;
 
 
-    width:100%;
-    min-height:100vh;
+    width: 100%;
+    min-height: 100vh;
 
-    background-image:url('../img/fundo.png');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    background-image: url('../img/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    background-attachment:fixed;
+    background-attachment: fixed;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
@@ -42,28 +42,29 @@ FUNDO DO MODAL
 CAIXA DO MODAL
 ========================= */
 
-.modal-box{
-    width:650px;
-    background:#e5e5e5;
+.modal-box {
+    width: 650px;
+    background: #e5e5e5;
 
-    border-radius:20px;
-    padding:40px;
+    border-radius: 20px;
+    padding: 40px;
 
 
 
-    box-shadow:0px 10px 30px rgba(0,0,0,0.25);
-    
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+
 }
+
 
 
 /* =========================
 FORMULÁRIO
 ========================= */
 
-.form-cadastro{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 
@@ -71,28 +72,28 @@ FORMULÁRIO
 CAMPOS
 ========================= */
 
-.campo{
-    display:flex;
-    flex-direction:column;
+.campo {
+    display: flex;
+    flex-direction: column;
 }
 
-.campo label{
-    font-weight:600;
-    font-size:14px;
+.campo label {
+    font-weight: 600;
+    font-size: 14px;
 }
 
-.campo input{
-    width:100%;
-    padding:12px;
+.campo input {
+    width: 100%;
+    padding: 12px;
 
-    border-radius:10px;
-    border:2px solid transparent;
+    border-radius: 10px;
+    border: 2px solid transparent;
 
-    background:#f0c46a;
+    background: #f0c46a;
 
-    margin-top:5px;
+    margin-top: 5px;
 
-    transition:0.3s;
+    transition: 0.3s;
 }
 
 
@@ -100,10 +101,10 @@ CAMPOS
 EFEITO QUANDO CLICA
 ========================= */
 
-.campo input:focus{
-    outline:none;
-    border:2px solid #f4a623;
-    background:#ffd88a;
+.campo input:focus {
+    outline: none;
+    border: 2px solid #f4a623;
+    background: #ffd88a;
 }
 
 
@@ -111,15 +112,20 @@ EFEITO QUANDO CLICA
 SENHAS LADO A LADO
 ========================= */
 
-.senha-group{
-    display:flex;
-    gap:20px;
+.senha-group {
+    display: flex;
+    gap: 20px;
+   
 }
 
-.input-box{
-    flex:1;
-    display:flex;
-    flex-direction:column;
+.input-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+    .input-cadastro{
+        background: #f0c46a;
+    }
 }
 
 
@@ -127,26 +133,42 @@ SENHAS LADO A LADO
 UPLOAD FOTO
 ========================= */
 
-.upload-area{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-top:15px;
-
+.upload-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.upload-icon{
-    width:40px;
-    height:50px;
+.upload-foto{
+    background-image: url('./../img/icon-foto.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 
-    border-radius:50%;
-    border:3px solid black;
+    height: 7rem;
+    width: 7rem;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: block;
+    cursor: pointer;
+}
 
-    font-size:20px;
+.upload-foto input{
+    display: none;
+}
+
+.upload-icon {
+    width: 40px;
+    height: 50px;
+
+    border-radius: 50%;
+    border: 3px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
 }
 
 
@@ -154,34 +176,35 @@ UPLOAD FOTO
 BOTÕES
 ========================= */
 
-.botoes-modal{
-    display:flex;
-    gap:20px;
-    margin-top:20px;
-    
-}
-.btn-concluir{
-    flex:1;
+.botoes-modal {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
 
-    padding:12px;
-
-    border-radius:25px;
-    border:none;
-
-    background:#f4a623;
-
-    font-weight:600;
 }
 
-.btn-voltar{
-    flex:1;
+.btn-concluir {
+    flex: 1;
 
-    padding:12px;
+    padding: 12px;
 
-    border-radius:25px;
+    border-radius: 25px;
+    border: none;
 
-    border:1px solid gray;
-    background:#f2f2f2;
+    background: #f4a623;
+
+    font-weight: 600;
+}
+
+.btn-voltar {
+    flex: 1;
+
+    padding: 12px;
+
+    border-radius: 25px;
+
+    border: 1px solid gray;
+    background: #f2f2f2;
 }
 
 
@@ -189,10 +212,10 @@ BOTÕES
 HOVER BOTÕES
 ========================= */
 
-.btn-voltar:hover{
-    background:#e2e2e2;
+.btn-voltar:hover {
+    background: #e2e2e2;
 }
 
-.btn-concluir:hover{
-    background:#e5961f;
+.btn-concluir:hover {
+    background: #e5961f;
 }

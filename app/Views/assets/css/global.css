@@ -18,3 +18,23 @@ body {
   overflow-x: hidden;
 }
 
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+h2{
+    font-size:28px;
+}
+
+p{
+    font-size:16px;
+}
+
+.opcao{
+    font-size:15px;
+}
+
+button{
+    font-size:16px;
+}

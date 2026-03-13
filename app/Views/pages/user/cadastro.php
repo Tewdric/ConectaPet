@@ -41,28 +41,25 @@ include './../../components/head/head.php';
 
             <div class="input-box">
                 <label>Senha</label>
-                <input type="password">
+                <input class="input-cadastro" type="password">
             </div>
 
             <div class="input-box">
                 <label>Confirmar Senha</label>
-                <input type="password">
+                <input class="input-cadastro" type="password">
             </div>
 
         </div>
 
 
         <div class="upload-area">
-
-            <div class="upload-icon">
-                <img src="../../assets/img/icon-foto.png" alt="">
-            </div>
+            <label class="upload-foto">
+                <input type="file" name="foto">
+            </label>
 
             <p>
                 Selecione uma imagem para foto de perfil
             </p>
-
-            <input type="file" name="foto">
 
         </div>
 
