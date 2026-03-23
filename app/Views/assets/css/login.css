@@ -123,3 +123,25 @@ form a{
 .bt-entrar:hover{
     background:#e6951e;
 }
+
+/* OLHINHO DA SENHA */
+.campo-senha{
+    position:relative;
+    width:100%;
+}
+
+.campo-senha input{
+    width:100%;
+    padding:14px;
+    padding-right:45px;
+}
+
+.olho{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    color:#555;
+    font-size:22px;
+}

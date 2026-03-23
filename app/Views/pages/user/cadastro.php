@@ -19,17 +19,17 @@ include './../../components/head/head.php';
 
         <div class="campo">
             <label>Nome Completo</label>
-            <input type="text" placeholder="Digite seu nome" required >
+            <input type="text" placeholder="Digite seu nome" required>
         </div>
 
         <div class="campo">
             <label>CPF</label>
-            <input type="text" placeholder="Digite seu CPF" >
+            <input type="text" placeholder="Digite seu CPF">
         </div>
 
         <div class="campo">
             <label>Telefone</label>
-            <input type="text" placeholder="Digite seu telefone" >
+            <input type="text" placeholder="Digite seu telefone">
         </div>
 
         <div class="campo">
@@ -37,18 +37,32 @@ include './../../components/head/head.php';
             <input type="email" placeholder="Digite seu email" required>
         </div>
 
+        <label for="senha">Senha</label>
+
         <div class="senha-group">
 
-            <div class="input-box">
-                <label>Senha</label>
-                <input class="input-cadastro" type="password" placeholder="Digite sua senha"  required>
-            </div>
+            <div class="campo-senha">
 
-            <div class="input-box">
-                <label>Confirmar Senha</label>
-                <input class="input-cadastro" type="password" placeholder="Confirme sua senha" required>
-            </div>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                <span class="material-icons olho" onclick="toggleSenha()">
+                    visibility
+                </span>
 
+            </div>
+        </div>
+
+        <label for="senha">Confirmar Senha</label>
+
+        <div class="senha-group">
+
+            <div class="campo-senha">
+
+                <input type="password" id="senha" name="senha" placeholder="Confirme sua senha" required>
+                <span class="material-icons olho" onclick="toggleSenha()">
+                    visibility
+                </span>
+
+            </div>
         </div>
 
 
@@ -85,4 +99,20 @@ include './../../components/head/head.php';
     include './../../components/modal/modal.php';
     ?>
 
+    <script>
+        function toggleSenha() {
+
+            const senha = document.getElementById("senha");
+            const icone = document.querySelector(".olho");
+
+            if (senha.type === "password") {
+                senha.type = "text";
+                icone.textContent = "visibility_off";
+            } else {
+                senha.type = "password";
+                icone.textContent = "visibility";
+            }
+
+        }
+    </script>
 </body>

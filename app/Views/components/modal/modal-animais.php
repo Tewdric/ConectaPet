@@ -35,13 +35,45 @@ include './../../components/head/head.php';
                     A adoção está disponível em <b><?= $cidade ?></b>
                 </p>
 
-                <button class="btn-adotar">
+                <button class="btn-adotar" onclick="abrirModal()">
                     Adotar 🐾
                 </button>
-
             </div>
 
         </div>
 
     </div>
+
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalAdocao">
+
+        <div class="modal-box">
+
+            <p class="modal-text">
+                Olá! Para prosseguirmos com a adoção do seu animalzinho, é essencial que você responda a um questionário rápido. Ele nos ajuda a garantir que o pet encontre um lar perfeito e responsável.
+                Obrigado pela sua dedicação! 🐾
+            </p>
+
+            <div class="modal-buttons">
+                <button class="btn-voltar" onclick="fecharModal()">Voltar</button>
+
+                <a href="../../pages/user/questionario.php">
+                    <button class="btn-ir">Ir para questionário 🐾</button>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function abrirModal() {
+            document.getElementById("modalAdocao").style.display = "flex";
+        }
+
+        function fecharModal() {
+            document.getElementById("modalAdocao").style.display = "none";
+        }
+    </script>
 </body>

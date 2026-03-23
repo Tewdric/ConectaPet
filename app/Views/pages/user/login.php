@@ -13,13 +13,15 @@ include './../../components/head/head.php';
 
     <section id="login-form">
         <!-- LADO ESQUERDO-->
+
         <div id="esquerda">
-            <img src="./../../assets/img/grupo_cacho.png" alt="" id="lado_esquedo">
 
             <p>Olá, Usuário! 🐾
                 Bem-vindo ao Conecta Pet!
-                Entre para continuar ajudando
                 nossos amigos de quatro patas.</p>
+            Entre para continuar ajudando
+            <img src="./../../assets/img/grupo_cacho.png" alt="" id="lado_esquedo">
+
         </div>
 
         <!-- LADO direito -->
@@ -31,21 +33,49 @@ include './../../components/head/head.php';
                 <input type="email" name="email" placeholder="Digite seu email " required>
 
                 <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha" required>
 
+                <div class="campo-senha">
+
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    <span class="material-icons olho" onclick="toggleSenha()">
+                        visibility
+                    </span>
+
+                </div>
 
             </form>
-            <a href="#">Esqueceu a senha?</a>
+            <a href="./recuperar-senha.php">Esqueceu a senha?</a>
             <div class="botoes">
                 <a href="./cadastro.php">
                     <button type="submit" class="bt-cadastro">
                         Cadastrar-se</button>
                 </a>
 
-                <button type="submit" class="bt-entrar">
-                    Entrar 🐾
-                </button>
+
+
+                <a href="./home.php">
+                    <button type="submit" class="bt-entrar">
+                        Entrar 🐾
+                    </button>
+                </a>
             </div>
         </div>
     </section>
+
+    <script>
+        function toggleSenha() {
+
+            const senha = document.getElementById("senha");
+            const icone = document.querySelector(".olho");
+
+            if (senha.type === "password") {
+                senha.type = "text";
+                icone.textContent = "visibility_off";
+            } else {
+                senha.type = "password";
+                icone.textContent = "visibility";
+            }
+
+        }
+    </script>
 </body>

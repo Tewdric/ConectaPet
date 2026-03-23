@@ -5,17 +5,22 @@ $titulo = 'Informaçoes';
 include './../../components/head/head.php';
 ?>
 
-<body>
-    <!-- navbar -->
+<body id="body-info-animais">
+
+    <?php
+    include './../../components/nav/navBar.php';
+    ?>
 
     <?php
 
     $nome = "Priscila";
 
-    $imagem = $baseImg . "../../assets/img/calopsita.png";
-    $descricao = "Olá! Estou buscando um novo lar amoroso para a  Priscila cheia de energia e personalidade. Ela é saudável, carinhosa e adora interagir com quem está ao seu redor. Priscila está acostumada a um ambiente tranquilo e gosta de cantar pela manhã.
-Estamos doando ela com todos os acessórios: gaiola, brinquedos e comedouros.
- O motivo da doação é que não conseguimos mais oferecer o tempo e a atenção que ela merece. Se você tem experiência com aves e pode proporcionar um lar cheio de carinho, entre em contato!";
+    $imagem = "../../assets/img/dog-card.png";
+    $descricao = "Olá! Estou buscando um novo lar amoroso para o Theo, um cachorro de 1 ano cheio de energia e muito carinhoso. Ele é saudável, brincalhão e adora correr, brincar e receber atenção. Theo gosta muito de interagir com as pessoas e é um ótimo companheiro para o dia a dia.
+
+Ele está acostumado a conviver com pessoas e se adapta bem a um ambiente com carinho e cuidado.
+
+O motivo da doação é que, no momento, não estamos conseguindo oferecer o tempo e a atenção que ele merece. Se você pode proporcionar um lar cheio de amor e cuidado para o Theo, entre em contato!";
     $telefone = "(11) 98765-4321";
     $email = "exemplo@email.com";
     $cidade = "Campo Grande, MS";
