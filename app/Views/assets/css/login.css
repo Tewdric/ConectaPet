@@ -2,146 +2,154 @@
    LOGIN PAGE
 ========================= */
 
-#login-form{
-    display:flex;
-    height:100vh;
+#login-form {
+    display: flex;
+    height: 100vh;
 }
 
 /* LADO ESQUERDO */
 
-#esquerda{
-    width:50%;
-    background:#f0f0f0;
-    text-align:center;
-    padding:40px;
+#esquerda {
+    width: 50%;
+    background: #f0f0f0;
+    text-align: center;
+    padding: 40px;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#lado_esquedo{
-    width:320px;
-    margin-bottom:20px;
+#lado_esquedo {
+    width: 320px;
+    margin-bottom: 20px;
 }
 
-#esquerda p{
-    font-size:18px;
-    line-height:1.6;
-    font-weight:500;
+#esquerda p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 
 /* LADO DIREITO */
 
-.direita{
-    width:50%;
+.direita {
+    width: 50%;
     background: rgba(255, 212, 131, 1);
-    padding:60px;
+    padding: 60px;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.direita h1{
-    text-align:center;
-    color:rgb(0, 0, 0);
-    font-size:36px;
-    margin-bottom:30px;
+.direita h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 36px;
+    margin-bottom: 30px;
 }
 
+.esqueceu {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    /* aumenta o espaço */
+}
 
 /* FORM */
 
-form{
-    display:flex;
-    flex-direction:column;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-label{
-    font-weight:600;
-    margin-top:10px;
+label {
+    font-weight: 600;
+    margin-top: 10px;
 }
 
-input{
-    padding:14px;
-    border-radius:25px;
-    border:none;
-    margin-top:5px;
-    margin-bottom:15px;
-    background:#e5e5e5;
+input {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background: white;
 }
+
+
 
 
 /* LINK ESQUECEU SENHA */
 
-form a{
-    font-size:14px;
-    margin-bottom:20px;
+form a {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 
 /* BOTÕES */
 
-.botoes{
-    display:flex;
-    justify-content:space-between;
+.botoes {
+    display: flex;
+    justify-content: space-between;
 }
 
 
 /* BOTÃO CADASTRO */
 
-.bt-cadastro{
-    padding:12px 20px;
-    border-radius:25px;
-    border:none;
-    background:#d9d9d9;
-    font-weight:600;
-    cursor:pointer;
+.bt-cadastro {
+    padding: 12px 50px;
+    border-radius: 25px;
+    border: none;
+    background: #d9d9d9;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 /* BOTÃO ENTRAR */
 
-.bt-entrar{
-    padding:12px 20px;
-    border-radius:25px;
-    border:none;
-    background:#f4a623;
-    color:white;
-    font-weight:600;
-    cursor:pointer;
+.bt-entrar {
+    padding: 12px 50px;
+    border-radius: 25px;
+    border: none;
+    background: #f4a623;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 /* HOVER BOTÕES */
 
-.bt-cadastro:hover{
-    background:#c9c9c9;
+.bt-cadastro:hover {
+    background: #c9c9c9;
 }
 
-.bt-entrar:hover{
-    background:#e6951e;
+.bt-entrar:hover {
+    background: #e6951e;
 }
 
 /* OLHINHO DA SENHA */
-.campo-senha{
-    position:relative;
-    width:100%;
+.campo-senha {
+    position: relative;
+    width: 100%;
 }
 
-.campo-senha input{
-    width:100%;
-    padding:14px;
-    padding-right:45px;
+.campo-senha input {
+    width: 100%;
+    padding: 14px;
+    padding-right: 45px;
 }
 
-.olho{
-    position:absolute;
-    right:15px;
-    top:50%;
-    transform:translateY(-50%);
-    cursor:pointer;
-    color:#555;
-    font-size:22px;
+.olho {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+    font-size: 22px;
 }

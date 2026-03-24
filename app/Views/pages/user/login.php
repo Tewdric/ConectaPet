@@ -44,14 +44,11 @@ include './../../components/head/head.php';
                 </div>
 
             </form>
-            <a href="./recuperar-senha.php">Esqueceu a senha?</a>
             <div class="botoes">
                 <a href="./cadastro.php">
                     <button type="submit" class="bt-cadastro">
                         Cadastrar-se</button>
                 </a>
-
-
 
                 <a href="./home.php">
                     <button type="submit" class="bt-entrar">
@@ -59,6 +56,7 @@ include './../../components/head/head.php';
                     </button>
                 </a>
             </div>
+            <a class="esqueceu" href="./recuperar-senha.php">Esqueceu a senha?</a>
         </div>
     </section>
 

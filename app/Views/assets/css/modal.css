@@ -1,17 +1,4 @@
 /* =========================
-RESET
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-
-/* =========================
 FUNDO DO MODAL
 ========================= */
 
@@ -77,7 +64,7 @@ CAMPOS
 
 .campo label {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .campo input {
@@ -87,7 +74,7 @@ CAMPOS
     border-radius: 10px;
     border: 2px solid transparent;
 
-    background: #f0c46a;
+    background: white;
 
     margin-top: 5px;
 
@@ -95,15 +82,7 @@ CAMPOS
 }
 
 
-/* =========================
-EFEITO QUANDO CLICA
-========================= */
 
-.campo input:focus {
-    outline: none;
-    border: 2px solid #f4a623;
-    background: #ffd88a;
-}
 
 
 /* =========================
@@ -183,7 +162,7 @@ BOTÕES
 }
 
 .btn-concluir {
-    padding: 12px 30px;
+    padding: 12px 50px;
     border-radius: 25px;
     border: none;
     background: #f4a623;
@@ -192,10 +171,11 @@ BOTÕES
 }
 
 .btn-voltar {
-    padding: 12px 30px;
-    border-radius: 60px;
-    border: 1px solid gray;
+    padding: 12px 60px;
+    border-radius: 25px;
+    border: 1px solid rgb(94, 94, 94);
     background: #f2f2f2;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -327,13 +307,7 @@ HOVER BOTÕES
     align-items: center;
 }
 
-.btn-voltar {
-    padding: 10px 30px;
-    border-radius: 10px;
-    border: 1px solid #999;
-    background: #eee;
-    cursor: pointer;
-}
+
 
 .btn-ir {
     background: #f3b21c;
@@ -346,4 +320,118 @@ HOVER BOTÕES
 
 .btn-ir:hover {
     background: #e19f0c;
+}
+
+
+/* VERIFICACAO DE CODIGO */
+
+
+.codigo {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.codigo input {
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background: rgb(221, 221, 221);
+}
+
+/* quando clicar */
+input:focus {
+    outline: none;
+    border: 2px solid rgb(250, 177, 42);
+}
+
+.reenvio {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    /* aumenta o espaço */
+
+}
+
+/* botao  de  voltar para home  */
+
+.bt_home {
+
+    text-align: center;
+    margin-top: 25px;
+    justify-content: center;
+    padding: 12px 50px;
+    border-radius: 25px;
+    border: none;
+    background: #f4a623;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* CONTATO */
+
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.dropdown {
+  position: relative;
+  width: 50%;
+}
+
+/* caixa principal */
+.dropdown-selected {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+}
+
+/* setinha */
+.dropdown-selected::after {
+  content: "▾";
+  position: absolute;
+  right: 15px;
+}
+
+/* lista escondida */
+.dropdown-options {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  border: #e19f0c;
+  margin-top: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* opções */
+.option {
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* hover bonito */
+.option:hover {
+  background: #eee;
+  border: #e19f0c;
+}
+
+/* quando aberto */
+.dropdown.active .dropdown-options {
+  display: block;
 }

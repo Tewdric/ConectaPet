@@ -15,21 +15,14 @@ include './../../components/head/head.php';
 
     <div class="confirmacao-box">
 
-        <h2>Solicitação enviada com sucesso 🐾</h2>
+        <h2>Mensagem enviada com sucesso 🐾</h2>
 
         <p>
-            Informamos que sua solicitação será analisada pela nossa equipe em até <b>48 horas</b>.
-            Você receberá uma notificação com o resultado ou próximos passos diretamente
-            no sistema ou por e-mail.
+            Obrigado por entrar em contato com a equipe do Conecta Pet. Recebemos sua mensagem e em breve um de nossos colaboradores retornará para ajudar no que for necessário.
+            Nosso compromisso é garantir que você tenha a melhor experiência possível, seja para adotar, apoiar ou simplesmente conhecer mais sobre nosso trabalho. Pedimos apenas que aguarde alguns instantes enquanto analisamos sua solicitação.
+            Enquanto isso, você pode continuar navegando pelo site e conhecendo nossos pets disponíveis para adoção, histórias inspiradoras e formas de contribuir com a causa.
         </p>
 
-        <p>
-            Caso tenha dúvidas, entre em contato conosco.
-        </p>
-
-        <p>
-            Estamos na torcida para que essa jornada de adoção seja incrível!
-        </p>
 
         <p class="assinatura">
             Com carinho,<br>

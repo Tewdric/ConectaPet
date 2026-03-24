@@ -17,7 +17,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <li><a href="animais.php">Animais</a></li>
 
         <?php if ($currentPage !== 'login.php') : ?>
-            <li><a href="contato.php">Contato</a></li>
+            <li><a href="./../../pages/user/contato.php">Contato</a></li>
             <li><a href="./../../pages/user/login.php">Login</a></li>
         <?php endif; ?>
 
