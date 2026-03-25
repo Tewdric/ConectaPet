@@ -45,9 +45,11 @@ textarea {
 }
 
 /* TEXTAREA */
-textarea {
+textarea:focus {
     resize: none;
     height: 80px;
+    border: 2px solid rgb(250, 177, 42);
+    outline: none;
 }
 
 /* BOTÕES */
