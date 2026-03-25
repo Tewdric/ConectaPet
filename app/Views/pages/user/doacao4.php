@@ -1,5 +1,5 @@
 <?php
-$titulo = 'Historido do Animal';
+$titulo = 'Cuidados e Compromissos';
 include './../../components/head/head.php';
 ?>
 
@@ -61,15 +61,20 @@ include './../../components/head/head.php';
             <label><input type="radio" name="castrado" value="Sim" required> Sim</label>
             <label><input type="radio" name="castrado" value="Não" required> Não</label>
         </div>
+        <label class="form-cadastro">Você gostaria de receber atualizações sobre o animal após a adoção? </label>
+        <div class="radio-group">
+            <label><input type="radio" name="castrado" value="Sim" required> Sim</label>
+            <label><input type="radio" name="castrado" value="Não" required> Não</label>
+        </div>
 
 
         <div class="botoes">
-            <a href="./doacao.php">
+            <a href="./doacao3.php">
                 <button type="button" class="btn-voltar">Voltar</button>
 
             </a>
-            <a href="./doacao4.php">
-                <button type="submit" class="btn-concluir">Continuar 🐾</button>
+            <a href="./doacao5.php">
+                <button type="submit" class="btn-concluir">Concluir 🐾</button>
             </a>
         </div>
     </form>
