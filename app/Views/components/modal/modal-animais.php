@@ -59,7 +59,7 @@ include './../../components/head/head.php';
                 <button class="btn-voltar" onclick="fecharModal()">Voltar</button>
 
                 <a href="../../pages/user/questionario.php">
-                    <button class="btn-ir">Ir para questionário 🐾</button>
+                    <button class="btn-concluir">Ir para questionário 🐾</button>
                 </a>
             </div>
 
