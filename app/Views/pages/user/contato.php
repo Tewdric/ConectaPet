@@ -63,35 +63,35 @@ include './../../components/head/head.php';
     include './../../components/modal/modal.php';
     ?>
 
-    <script>
-        const dropdown = document.querySelector(".dropdown");
-        const selected = document.querySelector(".dropdown-selected");
-        const options = document.querySelectorAll(".option");
-        const outroInput = document.getElementById("outroAssunto");
+        <script>
+            const dropdown = document.querySelector(".dropdown");
+            const selected = document.querySelector(".dropdown-selected");
+            const options = document.querySelectorAll(".option");
+            const outroInput = document.getElementById("outroAssunto");
 
-        selected.addEventListener("click", () => {
-            dropdown.classList.toggle("active");
-        });
+            selected.addEventListener("click", () => {
+                dropdown.classList.toggle("active");
+            });
 
-        options.forEach(option => {
-            option.addEventListener("click", () => {
-                selected.textContent = option.textContent;
-                dropdown.classList.remove("active");
+            options.forEach(option => {
+                option.addEventListener("click", () => {
+                    selected.textContent = option.textContent;
+                    dropdown.classList.remove("active");
 
-                // MOSTRAR input se for "Outro"
-                if (option.textContent === "Outro") {
-                    outroInput.style.display = "block";
-                } else {
-                    outroInput.style.display = "none";
+                    // MOSTRAR input se for "Outro"
+                    if (option.textContent === "Outro") {
+                        outroInput.style.display = "block";
+                    } else {
+                        outroInput.style.display = "none";
+                    }
+                });
+            });
+
+            /* fechar ao clicar fora */
+            document.addEventListener("click", (e) => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove("active");
                 }
             });
-        });
-
-        /* fechar ao clicar fora */
-        document.addEventListener("click", (e) => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove("active");
-            }
-        });
-    </script>
+        </script>
 </body>
