@@ -20,7 +20,7 @@ include './../../components/head/head.php';
     ?>
 
     <?php
-    ob_start();
+    ob_start();P
     ?>
 
     <div class="progress-steps">
