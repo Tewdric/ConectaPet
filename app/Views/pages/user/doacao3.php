@@ -25,6 +25,29 @@ include './../../components/head/head.php';
 
     <form class="form-animal">
 
+ <!-- PERGUNTA 3 -->
+
+        <div class="campo">
+            <label class="form-cadastro">Por que você está doando o animal?</label>
+
+            <div class="dropdown">
+                <div class="dropdown-selected">Selecione um tipo</div>
+
+                <div class="dropdown-options">
+                    <div class="option">Mudança de residência</div>
+                    <div class="option">Falta de condições financeiras</div>
+                    <div class="option">Falta de tempo para cuidar</div>
+                    <div class="option">Problemas de saúde do tutor</div>
+                    <div class="option">Incompatibilidade com outros animais ou pessoas</div>
+                    
+                </div>
+
+                <!-- valor enviado -->
+                <input type="hidden" name="tipoAnimal" required>
+            </div>
+        </div>
+        <input type="text" placeholder="Descrever o motivo" style="display:none;" class="outroAssunto">
+
         <!-- PERGUNTA 1 -->
         <div class="campo">
             <label class="form-cadastro">Como você adquiriu o animal?</label>
@@ -67,37 +90,13 @@ include './../../components/head/head.php';
             </div>
         </div>
 
-        <!-- PERGUNTA 3 -->
-
-        <div class="campo">
-            <label class="form-cadastro">Por que você está doando o animal?</label>
-
-            <div class="dropdown">
-                <div class="dropdown-selected">Selecione um tipo</div>
-
-                <div class="dropdown-options">
-                    <div class="option">Mudança de residência</div>
-                    <div class="option">Falta de condições financeiras</div>
-                    <div class="option">Falta de tempo para cuidar</div>
-                    <div class="option">Problemas de saúde do tutor</div>
-                    <div class="option">Incompatibilidade com outros animais ou pessoas</div>
-                    <div class="option">Outro</div>
-                </div>
-
-                <!-- valor enviado -->
-                <input type="hidden" name="tipoAnimal" required>
-            </div>
-        </div>
-        <input type="text" placeholder="Descrever o motivo" style="display:none;" class="outroAssunto">
-
+       
         <div class="botoes">
-            <a href="./doacao2.php">
-                <button type="button" class="btn-voltar">Voltar</button>
+            <button type="button" class="btn-voltar" onclick="window.location.href='./doacao2.php'">
+                Voltar
+            </button>
 
-            </a>
-            <a href="./doacao4.php">
-                <button type="submit" class="btn-concluir">Continuar 🐾</button>
-            </a>
+            <button type="submit" class="btn-concluir">Continuar 🐾</button>
         </div>
     </form>
 
@@ -127,7 +126,7 @@ include './../../components/head/head.php';
 
                     // campo "Outro"
                     const campo = dropdown.closest(".campo");
-                    const outroInput = campo.nextElementSibling;
+                    const outroInput = document.querySelector(".outroAssunto");
 
                     if (option.textContent === "Outro" && outroInput) {
                         outroInput.style.display = "block";
@@ -147,5 +146,55 @@ include './../../components/head/head.php';
         });
     </script>
 
+    <script>
+        document.querySelector(".form-animal").addEventListener("submit", function(e) {
+            let valido = true;
+
+            // remove erros antigos
+            document.querySelectorAll(".erro").forEach(el => el.classList.remove("erro"));
+
+            // pega todos os campos obrigatórios
+            const campos = this.querySelectorAll("[required]");
+
+            campos.forEach(campo => {
+                if (!campo.value || campo.value.trim() === "") {
+
+                    if (campo.type === "hidden") {
+                        campo.closest(".dropdown").classList.add("erro");
+                    } else {
+                        campo.classList.add("erro");
+                    }
+
+                    valido = false;
+                }
+            });
+
+            // valida radio (porque é diferente)
+            const radios = this.querySelectorAll("input[type='radio'][required]");
+            const nomes = [...new Set([...radios].map(r => r.name))];
+
+            nomes.forEach(nome => {
+                const marcado = this.querySelector(`input[name="${nome}"]:checked`);
+                if (!marcado) {
+                    valido = false;
+
+                    // marca todos do grupo
+                    this.querySelectorAll(`input[name="${nome}"]`).forEach(r => {
+                        r.parentElement.classList.add("erro");
+                    });
+                }
+            });
+
+            if (!valido) {
+                e.preventDefault();
+                alert("Preencha todos os campos obrigatórios!");
+            } else {
+                e.preventDefault(); // impede envio padrão
+                window.location.href = "doacao4.php";
+            }
+        });
+    </script>
+
 
 </body>
+x

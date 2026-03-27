@@ -42,9 +42,9 @@ include './../../components/head/head.php';
                 <!-- valor enviado -->
                 <input type="hidden" name="tipoAnimal" required>
             </div>
+            <input type="text" placeholder="Ex: Raivoso" style="display:none;" class="outroAssunto">
         </div>
 
-        <input type="text" placeholder="Ex: Raivoso" style="display:none;" class="outroAssunto">
 
         <!-- PERGUNTA 2 -->
 
@@ -58,7 +58,7 @@ include './../../components/head/head.php';
                     <div class="option">Sim, com todos</div>
                     <div class="option">Não testado/Desconhecido</div>
                     <div class="option">Não</div>
-                    <div class="option">Sim, apenas com algumas espécies: [Especificar]</div>
+                    <div class="option">Sim, apenas com algumas espécies</div>
                 </div>
 
                 <!-- valor enviado -->
@@ -116,23 +116,20 @@ include './../../components/head/head.php';
                 <div class="dropdown-options">
                     <div class="option">Não, está saudável</div>
                     <div class="option">Desconhecido</div>
-                    <div class="option">Outro</div>
+                    
                 </div>
 
                 <!-- valor enviado -->
                 <input type="hidden" name="tipoAnimal" required>
             </div>
         </div>
-        <input type="text" placeholder="Descrever: (Especificar condições de saúde, med.)" style="display:none;" class="outroAssunto">
 
         <div class="botoes">
-            <a href="./doacao1.php">
-                <button type="button" class="btn-voltar">Voltar</button>
+            <button type="button" class="btn-voltar" onclick="window.location.href='./doacao1.php'">
+                Voltar
+            </button>
 
-            </a>
-            <a href="./doacao3.php">
-                <button type="submit" class="btn-concluir">Continuar 🐾</button>
-            </a>
+            <button type="submit" class="btn-concluir">Continuar 🐾</button>
         </div>
 
     </form>
@@ -163,7 +160,7 @@ include './../../components/head/head.php';
 
                     // campo "Outro"
                     const campo = dropdown.closest(".campo");
-                    const outroInput = campo.nextElementSibling;
+                    const outroInput = document.querySelector(".outroAssunto");
 
                     if (option.textContent === "Outro" && outroInput) {
                         outroInput.style.display = "block";
@@ -180,6 +177,55 @@ include './../../components/head/head.php';
                     dropdown.classList.remove("active");
                 }
             });
+        });
+    </script>
+
+    <script>
+        document.querySelector(".form-animal").addEventListener("submit", function(e) {
+            let valido = true;
+
+            // remove erros antigos
+            document.querySelectorAll(".erro").forEach(el => el.classList.remove("erro"));
+
+            // pega todos os campos obrigatórios
+            const campos = this.querySelectorAll("[required]");
+
+            campos.forEach(campo => {
+                if (!campo.value || campo.value.trim() === "") {
+
+                    if (campo.type === "hidden") {
+                        campo.closest(".dropdown").classList.add("erro");
+                    } else {
+                        campo.classList.add("erro");
+                    }
+
+                    valido = false;
+                }
+            });
+
+            // valida radio (porque é diferente)
+            const radios = this.querySelectorAll("input[type='radio'][required]");
+            const nomes = [...new Set([...radios].map(r => r.name))];
+
+            nomes.forEach(nome => {
+                const marcado = this.querySelector(`input[name="${nome}"]:checked`);
+                if (!marcado) {
+                    valido = false;
+
+                    // marca todos do grupo
+                    this.querySelectorAll(`input[name="${nome}"]`).forEach(r => {
+                        r.parentElement.classList.add("erro");
+                    });
+                }
+            });
+
+            if (!valido) {
+                e.preventDefault();
+                alert("Preencha todos os campos obrigatórios!");
+            } else {
+                e.preventDefault(); // impede envio padrão
+                window.location.href = "doacao3.php";
+            }
         });
     </script>
 

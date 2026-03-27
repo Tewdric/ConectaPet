@@ -23,7 +23,7 @@ include './../../components/head/head.php';
 
     <h2>Cuidados e Compromissos</h2>
 
-    <form class="form-animal">
+    <form class="form-animal" novalidate>
 
         <!-- PERGUNTA 1 -->
         <div class="campo">
@@ -50,32 +50,30 @@ include './../../components/head/head.php';
 
         <label class="form-cadastro">Você já levou o animal a um veterinário?</label>
         <div class="radio-group">
-            <label><input type="radio" name="castrado" value="Sim" required> Sim</label>
-            <label><input type="radio" name="castrado" value="Não" required> Não</label>
+            <label><input type="radio" name="veterinario" value="Sim" required> Sim</label>
+            <label><input type="radio" name="veterinario" value="Não" required> Não</label>
         </div>
 
         <!-- PERGUNTA 3-->
 
         <label class="form-cadastro">Você concorda em fornecer informações adicionais, se necessário, para facilitar a adoção?</label>
         <div class="radio-group">
-            <label><input type="radio" name="castrado" value="Sim" required> Sim</label>
-            <label><input type="radio" name="castrado" value="Não" required> Não</label>
+            <label><input type="radio" name="infoAdicional" value="Sim" required> Sim</label>
+            <label><input type="radio" name="infoAdicional" value="Não" required> Não</label>
         </div>
+
+        <!-- PERGUNTA 4 -->
         <label class="form-cadastro">Você gostaria de receber atualizações sobre o animal após a adoção? </label>
         <div class="radio-group">
-            <label><input type="radio" name="castrado" value="Sim" required> Sim</label>
-            <label><input type="radio" name="castrado" value="Não" required> Não</label>
+            <label><input type="radio" name="atualizacoes" value="Sim" required> Sim</label>
+            <label><input type="radio" name="atualizacoes" value="Não" required> Não</label>
         </div>
 
-
         <div class="botoes">
-            <a href="./doacao3.php">
-                <button type="button" class="btn-voltar">Voltar</button>
-
-            </a>
-            <a href="./doacao5.php">
-                <button type="submit" class="btn-concluir">Concluir 🐾</button>
-            </a>
+            <button type="button" class="btn-voltar" onclick="window.location.href='./doacao3.php'">
+                Voltar
+            </button>
+            <button type="submit" class="btn-concluir">Concluir 🐾</button>
         </div>
     </form>
 
@@ -103,9 +101,7 @@ include './../../components/head/head.php';
 
                     if (hidden) hidden.value = option.textContent;
 
-                    // campo "Outro"
-                    const campo = dropdown.closest(".campo");
-                    const outroInput = campo.nextElementSibling;
+                    const outroInput = document.querySelector(".outroAssunto");
 
                     if (option.textContent === "Outro" && outroInput) {
                         outroInput.style.display = "block";
@@ -125,5 +121,51 @@ include './../../components/head/head.php';
         });
     </script>
 
+    <script>
+        document.querySelector(".form-animal").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let valido = true;
+
+            this.querySelectorAll(".erro").forEach(el => el.classList.remove("erro"));
+
+            const campos = this.querySelectorAll("[required]");
+
+            campos.forEach(campo => {
+                if (!campo.value || campo.value.trim() === "") {
+                    valido = false;
+
+                    if (campo.type === "hidden") {
+                        campo.closest(".dropdown").classList.add("erro");
+                    } else {
+                        campo.classList.add("erro");
+                    }
+                }
+            });
+
+            const radios = this.querySelectorAll("input[type='radio'][required]");
+            const nomes = [...new Set([...radios].map(r => r.name))];
+
+            nomes.forEach(nome => {
+                const grupo = this.querySelectorAll(`input[name="${nome}"]`);
+                const marcado = this.querySelector(`input[name="${nome}"]:checked`);
+
+                if (!marcado) {
+                    valido = false;
+
+                    grupo.forEach(r => {
+                        r.closest(".radio-group").classList.add("erro");
+                    });
+                }
+            });
+
+            if (!valido) {
+                alert("Preencha todos os campos obrigatórios!");
+                return;
+            }
+
+            window.location.href = "doacao5.php";
+        });
+    </script>
 
 </body>

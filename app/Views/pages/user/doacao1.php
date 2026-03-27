@@ -1,5 +1,5 @@
 <?php
-$titulo = 'Doação';
+$titulo = 'Apresente seu Aumigo';
 include './../../components/head/head.php';
 ?>
 
@@ -23,7 +23,7 @@ include './../../components/head/head.php';
 
     <h2>Apresente seu Aumigo 🐾</h2>
 
-    <form class="form-animal">
+    <form class="form-animal" method="POST" novalidate>
 
         <!-- INFORMAÇÕES BÁSICAS -->
         <fieldset>
@@ -136,13 +136,11 @@ include './../../components/head/head.php';
         </fieldset>
 
         <div class="botoes">
-            <a href="">
-                <button type="button" class="btn-voltar">Voltar</button>
+            <button type="button" class="btn-voltar" onclick="window.location.href='./home.php'">
+                Voltar
+            </button>
 
-            </a>
-            <a href="./doacao2.php">
-                <button type="submit" class="btn-concluir">Continuar 🐾</button>
-            </a>
+            <button type="submit" class="btn-concluir">Continuar 🐾</button>
         </div>
 
     </form>
@@ -174,7 +172,7 @@ include './../../components/head/head.php';
 
                     // campo "Outro"
                     const campo = dropdown.closest(".campo");
-                    const outroInput = campo.nextElementSibling;
+                    const outroInput = document.querySelector(".outroAssunto");
 
                     if (option.textContent === "Outro" && outroInput) {
                         outroInput.style.display = "block";
@@ -191,6 +189,55 @@ include './../../components/head/head.php';
                     dropdown.classList.remove("active");
                 }
             });
+        });
+    </script>
+
+    <script>
+        document.querySelector(".form-animal").addEventListener("submit", function(e) {
+            let valido = true;
+
+            // remove erros antigos
+            document.querySelectorAll(".erro").forEach(el => el.classList.remove("erro"));
+
+            // pega todos os campos obrigatórios
+            const campos = this.querySelectorAll("[required]");
+            
+            campos.forEach(campo => {
+                if (!campo.value || campo.value.trim() === "") {
+
+                    if (campo.type === "hidden") {
+                        campo.closest(".dropdown").classList.add("erro");
+                    } else {
+                        campo.classList.add("erro");
+                    }
+
+                    valido = false;
+                }
+            });
+
+            // valida radio (porque é diferente)
+            const radios = this.querySelectorAll("input[type='radio'][required]");
+            const nomes = [...new Set([...radios].map(r => r.name))];
+
+            nomes.forEach(nome => {
+                const marcado = this.querySelector(`input[name="${nome}"]:checked`);
+                if (!marcado) {
+                    valido = false;
+
+                    // marca todos do grupo
+                    this.querySelectorAll(`input[name="${nome}"]`).forEach(r => {
+                        r.parentElement.classList.add("erro");
+                    });
+                }
+            });
+
+            if (!valido) {
+                e.preventDefault();
+                alert("Preencha todos os campos obrigatórios!");
+            } else {
+                e.preventDefault(); // impede envio padrão
+                window.location.href = "doacao2.php";
+            }
         });
     </script>
 

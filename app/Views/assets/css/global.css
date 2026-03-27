@@ -51,3 +51,15 @@ input:focus {
   border: 2px solid rgb(250, 177, 42);
 }
 
+
+/* CAMPO DE VALIDACAO VERMELHO */
+.erro {
+    border: 2px solid red !important;
+}
+
+.mensagem-erro {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
