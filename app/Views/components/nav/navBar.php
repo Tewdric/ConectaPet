@@ -2,7 +2,7 @@
 $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 
-<nav class="navbar">
+<nav class="navbar" id="navbar-deslogado">
     <div class="navbar-logo">
         <img src="./../../assets/img/logo.png" alt="Logo">
     </div>
@@ -21,7 +21,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <li><a href="./../../pages/user/login.php">Login</a></li>
         <?php endif; ?>
 
-        
+
     </ul>
 
     <ul class="navbar-social">
@@ -33,3 +33,48 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
     <span class="material-symbols-outlined" id="navbar-sandwich">menu</span>
 </nav>
+
+<nav class="navbar" id="navbar-logado" style="display: none;">
+
+    <div class="navbar-menu">
+        <img src="../../assets/img/logo.png" class="logo">
+
+        <li><a href="./../../pages/user/home.php">Home</a></li>
+        <li><a href="sobre.php">Sobre</a></li>
+        <li><a href="animais.php">Animais</a></li>
+        <li><a href="./../../pages/user/contato.php">Contato</a></li>
+        <li><a href="./../../pages/user/login.php">Login</a></li>
+
+    </div>
+
+    <div class="navbar-social">
+        <img src="../../assets/img/acessibilidade.png" class="nav-icon">
+
+        <a href="./perfil_usuario.php">
+            <img src="../../assets/img/user.png" class="nav-icon">
+        </a>
+        <button onclick="logout()">Sair</button>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const logado = localStorage.getItem("login");
+
+        const navDeslogado = document.getElementById("navbar-deslogado");
+        const navLogado = document.getElementById("navbar-logado");
+
+        if (logado === "true") {
+            navDeslogado.style.display = "none";
+            navLogado.style.display = "flex";
+        } else {
+            navDeslogado.style.display = "flex";
+            navLogado.style.display = "none";
+        }
+    });
+
+    function logout() {
+        localStorage.removeItem('login');
+         window.location.href = "./home.php";
+    }
+</script>

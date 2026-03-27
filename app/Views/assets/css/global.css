@@ -7,6 +7,7 @@
 @import url("./questionario.css");
 @import url("./info_animais.css");
 @import url("./doacao.css");
+@import url("./perfil_usuario.css");
 
 
 * {
@@ -49,5 +50,17 @@ EFEITO QUANDO CLICA
 input:focus {
   outline: none;
   border: 2px solid rgb(250, 177, 42);
+}
+
+
+/* CAMPO DE VALIDACAO VERMELHO */
+.erro {
+    border: 2px solid red !important;
+}
+
+.mensagem-erro {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
 }
 

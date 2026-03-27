@@ -50,11 +50,9 @@ include './../../components/head/head.php';
                         Cadastrar-se</button>
                 </a>
 
-                <a href="./home.php">
-                    <button type="submit" class="bt-entrar">
-                        Entrar 🐾
-                    </button>
-                </a>
+                <button type="button" class="bt-entrar" onclick="login()">
+                    Entrar 🐾
+                </button>
             </div>
             <a class="esqueceu" href="./recuperar-senha.php">Esqueceu a senha?</a>
         </div>
@@ -74,6 +72,11 @@ include './../../components/head/head.php';
                 icone.textContent = "visibility";
             }
 
+        }
+
+        function login() {
+            localStorage.setItem('login', 'true');
+            window.location.href = "./home.php";
         }
     </script>
 </body>
