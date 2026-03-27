@@ -1,22 +1,22 @@
 <?php
-$titulo = 'Meu Perfil - Favoritos';
+$titulo = 'Meu Perfil';
 ?>
 <?php
-    include './../../components/head/head.php';
+include './../../components/head/head.php';
 ?>
 
 <div class="page">
-    <!-- navbar -->
-    <?php
-        include './../../components/nav/navBar.php';
-        ?>
+  <!-- navbar -->
+  <?php
+  include './../../components/nav/navBar.php';
+  ?>
 
 
   <div class="content">
 
     <div class="profile-card">
       <span class="profile-fieldset-label">Informações Pessoais</span>
-      <div class="avatar"> 
+      <div class="avatar">
         <img src="https://img.freepik.com/fotos-premium/garota-feliz-segura-seu-amado-animal-de-estimacao-um-gato-britanico-escoces-vermelho-no-colo-e-acaricia-seu-pelo_121837-9908.jpg?semt=ais_hybrid&w=740&q=80" alt="Julia Rocha">
       </div>
       <div class="profile-info">
@@ -86,4 +86,5 @@ $titulo = 'Meu Perfil - Favoritos';
 </script>
 
 </body>
+
 </html>
