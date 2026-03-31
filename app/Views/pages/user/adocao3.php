@@ -103,13 +103,13 @@ include './../../components/head/head.php';
     </form>
     <div class="botoes-modal">
 
-        <a href="./familia.php">
+        <a href="./adocao2.php">
             <button class="btn-voltar">
                 Voltar
             </button>
         </a>
 
-        <a href="./rotina.php">
+        <a href="./adocao4.php">
             <button class="btn-concluir">
                 Continuar 🐾
             </button></a>

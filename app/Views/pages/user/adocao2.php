@@ -20,7 +20,7 @@ include './../../components/head/head.php';
     ?>
 
     <?php
-    ob_start();P
+    ob_start();
     ?>
 
     <div class="progress-steps">
@@ -114,7 +114,7 @@ include './../../components/head/head.php';
                 Voltar
             </button></a>
 
-        <a href="./expe-animais.php"><button class="btn-concluir">
+        <a href="./adocao3.php"><button class="btn-concluir">
                 Continuar 🐾
             </button></a>
     </div>

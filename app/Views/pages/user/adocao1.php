@@ -131,12 +131,14 @@ include './../../components/head/head.php';
 
     </form>
     <div class="botoes-modal">
+        <a href="./home.php">
+            <button class="btn-voltar">
+                Voltar
+            </button>
 
-        <button class="btn-voltar">
-            Voltar
-        </button>
+        </a>
 
-        <a href="./familia.php"><button class="btn-concluir">
+        <a href="./adocao2.php"><button class="btn-concluir">
                 Continuar 🐾
             </button></a>
 

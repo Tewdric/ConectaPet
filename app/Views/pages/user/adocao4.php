@@ -85,13 +85,13 @@ include './../../components/head/head.php';
 
     <div class="botoes-modal">
 
-        <a href="./expe-animais.php">
+        <a href="./adocao3.php">
             <button class="btn-voltar">
                 Voltar
             </button>
         </a>
 
-        <a href="./termo.php">
+        <a href="./adocao5.php">
             <button class="btn-concluir">
                 Continuar 🐾
             </button>

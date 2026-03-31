@@ -84,7 +84,7 @@ include './../../components/head/head.php';
 
     <div class="botoes-modal">
 
-        <a href="./rotina.php">
+        <a href="./adocao4.php">
             <button type="button" onclick="history.back()" class="btn-voltar">
                 Voltar
             </button>
