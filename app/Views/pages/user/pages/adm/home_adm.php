@@ -3,8 +3,7 @@ $titulo = 'HOME ADM';
 include __DIR__ . '/../../../../components/head/head.php';
 ?>
 
-<body>
-
+<body>         
     <?php
     include __DIR__ . '/../../../../components/nav/nav_adm/sideBar.php';
     ?>
