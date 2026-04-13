@@ -1,0 +1,96 @@
+.admin-container h2 {
+    margin-bottom: 15px;
+}
+
+/* FILTRO */
+.filtro {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filtro button {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.filtro .ativo {
+    background: #E8BE7D;
+}
+
+/* TABELA */
+.tabela {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* HEADER */
+.tabela-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    background: #E8BE7D;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* LINHAS */
+.linha {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    align-items: center;
+
+    padding: 10px;
+    margin-top: 8px;
+
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+/* USER */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    background: #87bdf0;
+    border-radius: 50%;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.status.ativo {
+    background: #a5d6a7;
+    color: #1b5e20;
+}
+
+/* AÇÕES */
+.acoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.acoes i {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.acoes i:hover {
+    color: #E8BE7D;
+}
+
+
