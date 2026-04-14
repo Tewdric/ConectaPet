@@ -1,6 +1,7 @@
 <?php
 $tituloTabela = $tituloTabela ?? 'Tabela';
 $usuarios = $usuarios ?? [];
+$acoes = $acoes ?? []; // 👈 NOVO
 ?>
 
 <div class="admin-container">
@@ -14,7 +15,7 @@ $usuarios = $usuarios ?? [];
             <span>Nome</span>
             <span>Data</span>
             <span>Status</span>
-            <span></span>
+            <span>Ações</span>
         </div>
 
         <?php foreach ($usuarios as $u): ?>
@@ -28,12 +29,50 @@ $usuarios = $usuarios ?? [];
 
                 <span><?= $u['data'] ?></span>
 
-                <span class="status"><?= $u['status'] ?></span>
+                <span class="status <?= strtolower($u['status']) == 'ativo' ? 'ativo' : 'suspenso' ?>">
+                    <?= $u['status'] ?>
+                </span>
 
                 <div class="acoes">
-                    <i class="fas fa-lock"></i>
-                    <i class="fas fa-pen"></i>
-                    <i class="fas fa-trash"></i>
+
+                    <?php if (!empty($acoes)): ?>
+
+                        <?php foreach ($acoes as $acao): ?>
+
+                            <?php if ($acao == 'suspender'): ?>
+                                <button class="btn-acao suspender" data-id="<?= $u['id'] ?>">
+                                    <i class="fas <?= strtolower($u['status']) == 'ativo' ? 'fa-lock' : 'fa-lock-open' ?>"></i>
+                                </button>
+                            <?php endif; ?>
+
+                            <?php if ($acao == 'historico'): ?>
+                                <button class="btn-acao historico" data-id="<?= $u['id'] ?>" title="Histórico">
+                                    <i class="fas fa-clock"></i>
+                                </button>
+                            <?php endif; ?>
+
+                            <?php if ($acao == 'mensagem'): ?>
+                                <button class="btn-acao mensagem" data-id="<?= $u['id'] ?>" title="Mensagem">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            <?php endif; ?>
+
+                            <?php if ($acao == 'editar'): ?>
+                                <button class="btn-acao editar" data-id="<?= $u['id'] ?>" title="Editar">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            <?php endif; ?>
+
+                            <?php if ($acao == 'excluir'): ?>
+                                <button class="btn-acao excluir" data-id="<?= $u['id'] ?>" title="Excluir">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            <?php endif; ?>
+
+                        <?php endforeach; ?>
+
+                    <?php endif; ?>
+
                 </div>
             </div>
         <?php endforeach; ?>
