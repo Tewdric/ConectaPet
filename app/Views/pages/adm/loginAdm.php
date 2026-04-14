@@ -1,24 +1,20 @@
 <?php
-$titulo = 'Login';
+$titulo = 'Login Administrador';
 ?>
 <?php
 include './../../components/head/head.php';
 ?>
 
 <body>
-    <!-- navbar -->
-    <?php
-    include './../../components/nav/navBar.php';
-    ?>
 
     <section id="login-form">
         <!-- LADO ESQUERDO-->
 
         <div id="esquerda">
-            <p>Olá, Usuário! 🐾</p>
+            <p>Olá, Administrador! 🐾</p>
             <p>Bem-vindo ao <strong>Conecta Pet</strong>.</p>
-            <p>Ajude animais encontrarem um novo lar. </p>
-
+            <p>Gerencie a plataforma de forma rápida e simples. ⚙️</p>
+            
             <img src="./../../assets/img/grupo_cacho.png" alt="" id="lado_esquedo">
 
         </div>
@@ -44,16 +40,12 @@ include './../../components/head/head.php';
 
             </form>
             <div class="botoes">
-                <a href="./cadastro.php">
-                    <button type="submit" class="bt-cadastro">
-                        Cadastrar-se</button>
-                </a>
 
-                <button type="button" class="bt-entrar" onclick="login()">
+                <button type="button" class="bt_home" onclick="login()">
                     Entrar 🐾
                 </button>
             </div>
-            <a class="esqueceu" href="./recuperar-senha.php">Esqueceu a senha?</a>
+            <a class="esqueceu" href="./senha_adm.php">Esqueceu a senha?</a>
         </div>
     </section>
 

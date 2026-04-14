@@ -1,5 +1,5 @@
 <?php
-$titulo = 'Home';
+$titulo = 'Home Administrador';
 include './../../components/head/head.php';
 ?>
 

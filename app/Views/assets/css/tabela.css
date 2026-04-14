@@ -92,7 +92,8 @@
     display: flex;
     gap: 10px;
     justify-content: center;
-    flex-wrap: nowrap;/* 👈 impede quebrar linha */
+    flex-wrap: nowrap;
+    /* 👈 impede quebrar linha */
 }
 
 .acoes i {
@@ -132,10 +133,129 @@
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    flex: 0 0 auto; /* 👈 impede encolher/quebrar */
+    flex: 0 0 auto;
+    /* 👈 impede encolher/quebrar */
 }
 
 
 .btn-acao i {
     font-size: 14px;
+}
+
+/* MODAL */
+
+/* FUNDO */
+.modaladm {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* CAIXA */
+.modal2 {
+    background: white;
+    /* width: 420px; */
+    /* max-width: 90%; */
+    border-radius: 16px;
+    padding: 20px;
+    width: 550px;       /* 👈 maior */
+    max-width: 95%;     /* 👈 responsivo */
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    animation: aparecer 0.25s ease;
+}
+
+/* HEADER */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+}
+
+.fechar-x {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* CAMPOS */
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.campo label {
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.campo input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+.campo input:focus {
+    border-color: #1abc9c;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26,188,156,0.2);
+}
+
+/* BOTÕES */
+.modal-botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-cancelar {
+    background: #eee;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-salvar {
+    background: #1abc9c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+    from {
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* alerta para campos */
+
+.erro {
+    border: 1px solid red !important;
+    background: #ffecec;
 }

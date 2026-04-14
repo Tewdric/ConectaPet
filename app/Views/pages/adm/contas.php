@@ -29,7 +29,7 @@ include './../../components/head/head.php';
 
             <!-- BOTÃO CONDICIONAL -->
             <?php if ($tipo == 'moderadores'): ?>
-                <button class="btn-criar">Criar novo Moderador</button>
+                <button class="btn-criar" id="abrirModal">Criar novo Moderador</button>
             <?php endif; ?>
 
         </div>
@@ -62,6 +62,8 @@ include './../../components/head/head.php';
         ?>
 
     </div>
+
+    <!-- script para oicone de suspende = cadeado  -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
@@ -103,6 +105,134 @@ include './../../components/head/head.php';
         });
     </script>
 
+    <div class="modaladm" id="modal">
+
+        <div class="modal2">
+
+            <h3>Novo Moderador</h3>
+
+            <form class="form-animal">
+
+                <input type="text" placeholder="Nome completo" required>
+
+                <input type="email" placeholder="Email" required>
+
+                <input type="text" placeholder="Telefone" required>
+
+                <div class="senha-group">
+
+                    <div class="campo-senha">
+
+                        <input type="password" id="senha" name="senha" placeholder="Confirme sua senha" required>
+                        <span class="material-icons olho" onclick="toggleSenha()">
+                            visibility
+                        </span>
+
+                    </div>
+                </div>
+                <input type="file" accept="image/*" required>
+
+                <div class="modal-botoes">
+                    <button class="btn-voltar" type="button" id="fecharModal">Cancelar</button>
+                    <button class="btn-concluir" type="submit">Cadastrar</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- modal para cadastrarmoderadorr -->
+
+    <script>
+        const modal = document.getElementById('modal');
+        const abrir = document.getElementById('abrirModal');
+        const fechar = document.getElementById('fecharModal');
+
+        abrir.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+
+        fechar.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // fechar clicando fora
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- alerta para todos os campos serem preenchidos -->
+    <script>
+        document.querySelector(".form-animal").addEventListener("submit", function(e) {
+            let valido = true;
+
+            // remove erros antigos
+            document.querySelectorAll(".erro").forEach(el => el.classList.remove("erro"));
+
+            // pega todos os campos obrigatórios
+            const campos = this.querySelectorAll("[required]");
+
+            campos.forEach(campo => {
+                if (!campo.value || campo.value.trim() === "") {
+
+                    if (campo.type === "hidden") {
+                        campo.closest(".dropdown").classList.add("erro");
+                    } else {
+                        campo.classList.add("erro");
+                    }
+
+                    valido = false;
+                }
+            });
+
+            // valida radio (porque é diferente)
+            const radios = this.querySelectorAll("input[type='radio'][required]");
+            const nomes = [...new Set([...radios].map(r => r.name))];
+
+            nomes.forEach(nome => {
+                const marcado = this.querySelector(`input[name="${nome}"]:checked`);
+                if (!marcado) {
+                    valido = false;
+
+                    // marca todos do grupo
+                    this.querySelectorAll(`input[name="${nome}"]`).forEach(r => {
+                        r.parentElement.classList.add("erro");
+                    });
+                }
+            });
+
+            if (!valido) {
+                e.preventDefault();
+                alert("Preencha todos os campos obrigatórios!");
+            } else {
+                // aqui depois você vai salvar no banco
+                alert("Moderador cadastrado com sucesso!");
+            }
+        });
+    </script>
+
+    <!-- olhinho da senha -->
+    <script>
+        function toggleSenha() {
+
+            const senha = document.getElementById("senha");
+            const icone = document.querySelector(".olho");
+
+            if (senha.type === "password") {
+                senha.type = "text";
+                icone.textContent = "visibility_off";
+            } else {
+                senha.type = "password";
+                icone.textContent = "visibility";
+            }
+
+        }
+    </script>
 </body>
 
 </html>
