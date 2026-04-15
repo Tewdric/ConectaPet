@@ -32,6 +32,12 @@ $titulo = 'Home';
             <span class="dot"></span>
         </div>
     </section>
+
+    <dialog id="modal-acessibilidade">
+     <?php
+        include './teste2.php';
+        ?>
+    </dialog>
 </body>
 
 </html>
