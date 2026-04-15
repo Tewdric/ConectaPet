@@ -65,3 +65,8 @@ input:focus {
     font-size: 12px;
     margin-top: 4px;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}

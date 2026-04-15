@@ -111,11 +111,10 @@ include './../../components/head/head.php';
                 Voltar
             </button>
 
-            <a href="./adocao2.php">
-                <button type="submit" class="btn-concluir">
-                    Continuar 🐾
-                </button>
-            </a>
+            <button type="submit" class="btn-concluir">
+                <a href="./adocao2.php">Continuar 🐾</a>
+            </button>
+ 
         </div>
 
     </form>
