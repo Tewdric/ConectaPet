@@ -8,8 +8,9 @@
 @import url("./info_animais.css");
 @import url("./doacao.css");
 @import url("./perfil_usuario.css");
-@import url("./acessibilidade.css");
-
+<<<<<<< HEAD
+/* @import url("./acessibilidade.css");
+ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -39,15 +40,52 @@ p {
 
 button {
   font-size: 16px;
+=======
+@import url("./sideBar.css");
+@import url("./home_adm.css");
+@import url("./tabela.css");
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.opcao {
+    font-size: 15px;
+}
+
+button {
+    font-size: 16px;
+/* >>>>>>> ca3908e0b31f1b0217200f0e57af04dfd1e3ee43
+ */}
 
 /* =========================
 EFEITO QUANDO CLICA
 ========================= */
 
 input:focus {
-  outline: none;
-  border: 2px solid rgb(250, 177, 42);
+    outline: none;
+    border: 2px solid rgb(250, 177, 42);
 }
 
 /* CAMPO DE VALIDACAO VERMELHO */
@@ -60,3 +98,11 @@ input:focus {
   font-size: 12px;
   margin-top: 4px;
 }
+<<<<<<< HEAD
+=======
+
+a{
+    text-decoration: none;
+    color: black;
+}
+>>>>>>> ca3908e0b31f1b0217200f0e57af04dfd1e3ee43

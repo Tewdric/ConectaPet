@@ -27,13 +27,12 @@ legend {
     /* font-size: 14px; */
 
 
-input,
-select,
+input, select,
 textarea {
-    width: 100%;
+   /*  width: 100%; */
     padding: 8px;
     margin-top: 5px;
-    border-radius: 6px;
+    border-radius: 10px;
     border: 1px solid #ccc;
 }
 

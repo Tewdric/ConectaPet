@@ -1,0 +1,113 @@
+/* DASHBOARD */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARDS */
+.cards_ADM {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    background: #fff;
+}
+
+.card span {
+    font-size: 22px;
+}
+
+.card p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+/* CORES */
+.roxo {
+    background: #d9d6f2;
+}
+
+.azul {
+    background: #3cc1c9;
+    color: white;
+}
+
+.vermelho {
+    background: #ef6b7b;
+    color: white;
+}
+
+/* CONTEÚDO */
+.conteudo {
+    display: flex;
+    gap: 20px;
+}
+
+/* BOXES */
+.grafico-box,
+.grafico-circular,
+.recentes {
+    background: #dddcdc;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* TAMANHOS */
+.grafico-box {
+    flex: 2;
+    height: 280px;
+    position: relative;
+}
+
+.lado-direito {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* CANVAS AJUSTE */
+.grafico-box canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* GRÁFICO CIRCULAR */
+.grafico-circular {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#graficoPizza {
+    width: 180px !important;
+    height: 180px !important;
+}
+
+/* LISTA */
+.recentes .item {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* login adm */
+
+.bt_login_adm {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 50px;
+    border-radius: 25px;
+    border: none;
+    background: #f4a623;
+    font-weight: 600;
+    cursor: pointer;
+}

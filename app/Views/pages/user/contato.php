@@ -39,7 +39,8 @@ include './../../components/head/head.php';
         <input type="email" name="email" placeholder="Digite seu E-mail" required>
 
         <label>Mensagem</label>
-        <textarea placeholder="Digite a sua mensagem"required></textarea>
+        <textarea id="mensagem" name="mensagem" placeholder="Digite a sua mensagem" maxlength="500"required></textarea>
+        <small id="contador">0 / 500 caracteres</small>
     </form>
 
     <div class="botoes-modal">
@@ -49,7 +50,7 @@ include './../../components/head/head.php';
         </a>
 
         <a href="./agradecimento.php">
-            <button h class="btn-concluir">
+            <button  class="btn-concluir">
                 Enviar Mensagem 🐾
             </button>
         </a>
@@ -90,6 +91,21 @@ include './../../components/head/head.php';
         document.addEventListener("click", (e) => {
             if (!dropdown.contains(e.target)) {
                 dropdown.classList.remove("active");
+            }
+        });
+
+        const textarea = document.getElementById("mensagem");
+        const contador = document.getElementById("contador");
+        const limite = 500;
+
+        textarea.addEventListener("input", () => {
+            let tamanho = textarea.value.length;
+
+            contador.textContent = `${tamanho} / ${limite} caracteres`;
+
+            // limitar caracteres
+            if (tamanho > limite) {
+                textarea.value = textarea.value.substring(0, limite);
             }
         });
     </script>
