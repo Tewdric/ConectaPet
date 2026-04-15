@@ -14,36 +14,35 @@
 
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
 body {
-  overflow-x: hidden;
-}
-
-
-body{
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+
 }
 
-h2{
-    font-size:28px;
+
+
+h2 {
+    font-size: 28px;
 }
 
-p{
-    font-size:16px;
+p {
+    font-size: 16px;
 }
 
-.opcao{
-    font-size:15px;
+.opcao {
+    font-size: 15px;
 }
 
-button{
-    font-size:16px;
+button {
+    font-size: 16px;
 }
 
 /* =========================
@@ -51,8 +50,8 @@ EFEITO QUANDO CLICA
 ========================= */
 
 input:focus {
-  outline: none;
-  border: 2px solid rgb(250, 177, 42);
+    outline: none;
+    border: 2px solid rgb(250, 177, 42);
 }
 
 
@@ -66,4 +65,3 @@ input:focus {
     font-size: 12px;
     margin-top: 4px;
 }
-

@@ -132,7 +132,7 @@ include './../../components/head/head.php';
                 </div>
                 <input type="file" accept="image/*" required>
 
-                <div class="modal-botoes">
+                <div class="botoes-modal">
                     <button class="btn-voltar" type="button" id="fecharModal">Cancelar</button>
                     <button class="btn-concluir" type="submit">Cadastrar</button>
                 </div>

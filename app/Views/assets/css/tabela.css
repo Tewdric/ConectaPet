@@ -217,7 +217,7 @@
 }
 
 /* BOTÕES */
-.modal-botoes {
+/* .modal-botoes {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
@@ -230,16 +230,16 @@
     padding: 8px 14px;
     border-radius: 8px;
     cursor: pointer;
-}
+} */
 
-.btn-salvar {
+/* .btn-salvar {
     background: #1abc9c;
     color: white;
     border: none;
     padding: 8px 14px;
     border-radius: 8px;
     cursor: pointer;
-}
+} */
 
 /* ANIMAÇÃO */
 @keyframes aparecer {
