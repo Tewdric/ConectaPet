@@ -19,7 +19,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         </li>
 
         <li class="<?= $currentPage == 'contas.php' ? 'active' : '' ?>">
-            <a href="../../../pages/adm/contas.php">
+            <a href="./contas.php    ">
                 <i class="fas fa-users"></i> Admin. Contas
             </a>
         </li>

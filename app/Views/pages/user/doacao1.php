@@ -130,9 +130,9 @@ include './../../components/head/head.php';
 
             <label class="form-cadastro">Foto</label>
             <input type="file" required>
-
-            <label class="form-cadastro">Descrição</label>
-            <textarea placeholder="Ex: Muito dócil, gosta de brincar..." required></textarea>
+<label>Mensagem</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Digite a sua mensagem" maxlength="500"required></textarea>
+        <small id="contador">0 / 500 caracteres</small>
         </fieldset>
 
         <div class="botoes">

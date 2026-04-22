@@ -29,7 +29,7 @@ legend {
 
 input, select,
 textarea {
-   /*  width: 100%; */
+    
     padding: 8px;
     margin-top: 5px;
     border-radius: 10px;
