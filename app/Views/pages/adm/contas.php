@@ -105,6 +105,8 @@ include './../../components/head/head.php';
         });
     </script>
 
+    <!-- modal para cadastrar moderdor -->
+
     <div class="modaladm" id="modal">
 
         <div class="modal2">
