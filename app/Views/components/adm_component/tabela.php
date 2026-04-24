@@ -52,7 +52,10 @@ $acoes = $acoes ?? []; // 👈 NOVO
                             <?php endif; ?>
 
                             <?php if ($acao == 'mensagem'): ?>
-                                <button class="btn-acao mensagem" data-id="<?= $u['id'] ?>" title="Mensagem">
+                                <button class="btn-acao mensagem"
+                                    data-id="<?= $u['id'] ?>"
+                                    data-nome="<?= $u['nome'] ?>"
+                                    title="Mensagem">
                                     <i class="fas fa-envelope"></i>
                                 </button>
                             <?php endif; ?>

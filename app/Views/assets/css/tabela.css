@@ -259,3 +259,23 @@
     border: 1px solid red !important;
     background: #ffecec;
 }
+
+/* css da tabeka historico (contas) */
+
+.tabela-historico .topo,
+.tabela-historico .linha {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.tabela-historico .topo {
+    background: #e0b36a;
+    font-weight: bold;
+}
+
+.tabela-historico .linha {
+    background: #f2f2f2;
+}
