@@ -48,6 +48,15 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </a>
         </li>
 
+        <!-- sair -->
+        <li class="logout">
+            <a href="./logout.php">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </a>
+        </li>
+
+
+
     </ul>
 
 </div>
