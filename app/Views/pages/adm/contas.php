@@ -10,13 +10,12 @@ include './../../components/head/head.php';
     <div class="main-content">
 
         <?php
-        // ✅ define o tipo
         $tipo = $_GET['tipo'] ?? 'usuarios';
         ?>
+
         <h2>Administrar Contas</h2>
 
         <div class="topo-tabela">
-            <!-- FILTRO -->
             <div class="filtro">
                 <a href="?tipo=usuarios">
                     <button class="<?= $tipo == 'usuarios' ? 'ativo' : '' ?>">Usuário</button>
@@ -27,335 +26,235 @@ include './../../components/head/head.php';
                 </a>
             </div>
 
-            <!-- BOTÃO CONDICIONAL -->
             <?php if ($tipo == 'moderadores'): ?>
                 <button class="btn-criar" id="abrirModal">Criar novo Moderador</button>
             <?php endif; ?>
-
         </div>
+
         <?php
-        // ✅ dados dinâmicos
         if ($tipo == 'moderadores') {
             $tituloTabela = "Moderadores";
-
             $usuarios = [
-                ["id" => 10, "nome" => "Carlos", "data" => "05/02", "status" => "Ativo"],
-                ["id" => 11, "nome" => "Ana", "data" => "06/02", "status" => "Ativo"]
+                ["id" => 10, "nome" => "Carlos", "data" => "05/02", "status" => "Ativo", "email" => "carlos@email.com", "telefone" => "(67)99999-9999"],
+                ["id" => 11, "nome" => "Ana", "data" => "06/02", "status" => "Ativo", "email" => "ana@email.com", "telefone" => "(67)98888-8888"]
             ];
-
-            // 👇 NOVO
             $acoes = ['suspender', 'historico', 'mensagem', 'editar'];
         } else {
             $tituloTabela = "Usuários";
-
             $usuarios = [
                 ["id" => 1, "nome" => "João", "data" => "01/01", "status" => "Ativo"],
                 ["id" => 2, "nome" => "Maria", "data" => "02/02", "status" => "Ativo"]
             ];
-
-            // 👇 NOVO
             $acoes = ['editar', 'suspender'];
         }
 
-        // ✅ chama componente
         include './../../components/adm_component/tabela.php';
         ?>
 
     </div>
 
-    <!-- script para oicone de suspende = cadeado  -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            document.querySelectorAll('.btn-acao.suspender').forEach(botao => {
-
-                botao.addEventListener('click', function() {
-
-                    let linha = this.closest('.linha');
-                    let status = linha.querySelector('.status');
-                    let icone = this.querySelector('i');
-
-                    if (!status || !icone) return;
-
-                    if (status.classList.contains('ativo')) {
-                        // vai suspender
-                        status.classList.remove('ativo');
-                        status.classList.add('suspenso');
-                        status.textContent = 'Suspenso';
-
-                        // agora mostra abrir 🔓
-                        icone.classList.remove('fa-lock');
-                        icone.classList.add('fa-lock-open');
-
-                    } else {
-                        // vai ativar
-                        status.classList.remove('suspenso');
-                        status.classList.add('ativo');
-                        status.textContent = 'Ativo';
-
-                        // agora mostra fechar 🔒
-                        icone.classList.remove('fa-lock-open');
-                        icone.classList.add('fa-lock');
-                    }
-
-                });
-
-            });
-
-        });
-    </script>
-
-    <!-- modal para cadastrar moderdor -->
-    <div class="modaladm" id="modal">
-
+    <!-- MODAL CRIAR -->
+    <div class="modaladm" id="modalCriar">
         <div class="modal2">
             <h3>Novo Moderador</h3>
-            <form class="form-animal">
-
-                <label>Nome completo</label>
-                <input type="text" placeholder="Ex: João Silva" required>
+            <form id="formCriar">
+                <label>Nome</label>
+                <input type="text" placeholder="Ex: João" required>
 
                 <label>Email</label>
-                <input type="email" placeholder="Ex: joao@email.com" required>
+                <input type="email" placeholder="Ex: joao@gmail.com" required>
 
                 <label>Telefone</label>
-                <input type="text" name="telefone" placeholder="Ex: (67) 99999-9999" maxlength="15" required>
+                <input type="text" id="telefone" name="telefone" maxlength="15" placeholder="Ex: (67) 99999-9999" required>
 
                 <label>CPF</label>
-                <input type="text" name="cpf" placeholder="Ex: 000.000.000-00" maxlength="14" required>
-
-                <label>Foto</label>
-                <input type="file" accept="image/*" required>
+                <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Ex: 000.000.000-00" required>
 
                 <div class="botoes-modal">
-                    <button class="btn-voltar" type="button" id="fecharModal">Cancelar</button>
-                    <button class="btn-concluir" type="submit">Cadastrar</button>
+                    <button type="button" class="btn-voltar" id="fecharCriar">Cancelar</button>
+                    <button type="submit" class="btn-concluir">Cadastrar</button>
                 </div>
-
             </form>
         </div>
     </div>
-    <!-- modal para historico do moderador -->
 
-    <div class="modaladm" id="modalHistorico">
-
+    <!-- MODAL EDITAR -->
+    <div class="modaladm" id="modalEditar">
         <div class="modal2">
+            <h3>Editando <span id="nomeEditar"></span></h3>
+            <form id="formEditar">
+                <input type="hidden" id="editId">
 
-            <h3>Histórico do Moderador</h3>
+                <label>Nome</label>
+                <input type="text" id="editNome" required>
 
-            <div class="tabela-historico">
+                <label>Email</label>
+                <input type="email" id="editEmail" required>
 
-                <div class="topo">
+                <label>Telefone</label>
+                <input type="text" id="editTelefone" required>
+
+                <div class="botoes-modal">
+                    <button type="button" class="btn-voltar" id="fecharEditar">Cancelar</button>
+                    <button type="submit" class="btn-concluir">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL MENSAGEM -->
+    <div class="modaladm" id="modalMensagem">
+        <div class="modal2">
+            <h3>Mensagem para <span id="nomeUsuario"></span></h3>
+            <form id="formMensagem">
+                <textarea id="mensagemTexto" placeholder="Digite sua mensagem..." required></textarea>
+                <div class="botoes-modal">
+                    <button type="button" class="btn-voltar" id="fecharMensagem">Cancelar</button>
+                    <button type="submit" class="btn-concluir">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL HISTORICO -->
+    <div class="modaladm" id="modalHistorico">
+        <div class="modal2">
+            <h3>Histórico de <span id="nomeHistorico"></span></h3>
+
+            <div class="topo">
+                <div class="tabela-header">
                     <span>Ação</span>
                     <span>Descrição</span>
                     <span>Data</span>
                 </div>
 
                 <div id="conteudoHistorico"></div>
-
             </div>
 
             <button class="btn-voltar" id="fecharHistorico">Fechar</button>
-
         </div>
-
     </div>
 
-    <!-- modal de mensagem -->
-
-    <div class="modaladm" id="modalMensagem">
-
-        <div class="modal2">
-
-            <h3>Enviar mensagem para <span id="nomeUsuario"></span></h3>
-
-            <form id="formMensagem">
-
-                <textarea id="mensagemTexto" placeholder="Digite sua mensagem..." required></textarea>
-
-                <div class="botoes-modal">
-                    <button type="button" class="btn-voltar" id="fecharMensagem">Cancelar</button>
-                    <button type="submit" class="btn-concluir">Enviar</button>
-                </div>
-
-            </form>
-
-        </div>
-
-    </div>
-
-    <!-- script modal de mensagem -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener("DOMContentLoaded", function() {
 
+            function abrir(modal) {
+                modal.style.display = 'flex';
+            }
+
+            function fechar(modal) {
+                modal.style.display = 'none';
+            }
+
+            function fecharFora(modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        fechar(modal);
+                    }
+                });
+            }
+
+            const modalCriar = document.getElementById("modalCriar");
+            const modalEditar = document.getElementById("modalEditar");
             const modalMsg = document.getElementById("modalMensagem");
-            const fecharMsg = document.getElementById("fecharMensagem");
-            const nomeSpan = document.getElementById("nomeUsuario");
-            const form = document.getElementById("formMensagem");
-            const textarea = document.getElementById("mensagemTexto");
+            const modalHist = document.getElementById("modalHistorico");
 
-            let usuarioId = null;
+            // CRIAR (CORRIGIDO)
+            document.getElementById("abrirModal")?.addEventListener("click", () => abrir(modalCriar));
+            document.getElementById("fecharCriar").onclick = () => fechar(modalCriar);
 
-            // abrir modal
+            // VALIDAÇÃO CPF E TELEFONE
+            document.getElementById("formCriar").addEventListener("submit", function(e) {
+
+                const cpf = document.getElementById("cpf").value.trim();
+                const telefone = document.getElementById("telefone").value.trim();
+
+                // CPF precisa ter 14 caracteres (000.000.000-00)
+                if (cpf.length !== 14) {
+                    alert("CPF inválido! Use o formato 000.000.000-00");
+                    e.preventDefault();
+                    return;
+                }
+
+                // Telefone precisa ter 14 ou 15 caracteres
+                if (telefone.length < 14) {
+                    alert("Telefone inválido! Use o formato (67) 99999-9999");
+                    e.preventDefault();
+                    return;
+                }
+
+            });
+
+            // EDITAR
+            document.querySelectorAll('.btn-acao.editar').forEach(botao => {
+                botao.addEventListener('click', function() {
+                    document.getElementById("editId").value = this.dataset.id;
+                    document.getElementById("editNome").value = this.dataset.nome;
+                    document.getElementById("editEmail").value = this.dataset.email;
+                    document.getElementById("editTelefone").value = this.dataset.telefone;
+                    document.getElementById("nomeEditar").textContent = this.dataset.nome;
+                    abrir(modalEditar);
+                });
+            });
+            document.getElementById("fecharEditar").onclick = () => fechar(modalEditar);
+            document.getElementById("fecharHistorico").onclick = () => fechar(modalHist);
+
+            // MENSAGEM (CORRETO)
             document.querySelectorAll('.btn-acao.mensagem').forEach(botao => {
 
                 botao.addEventListener('click', function() {
 
-                    usuarioId = this.dataset.id;
                     const nome = this.dataset.nome;
 
-                    nomeSpan.textContent = nome;
+                    // coloca nome no título
+                    document.getElementById("nomeUsuario").textContent = nome;
 
-                    modalMsg.style.display = 'flex';
-                    textarea.value = "";
+                    // abre modal
+                    abrir(modalMsg);
+
+                    // limpa campo
+                    document.getElementById("mensagemTexto").value = "";
 
                 });
 
             });
 
-            // fechar
-            fecharMsg.addEventListener('click', () => {
-                modalMsg.style.display = 'none';
-            });
-
-            modalMsg.addEventListener('click', (e) => {
-                if (e.target === modalMsg) {
-                    modalMsg.style.display = 'none';
-                }
-            });
+            // botão fechar
+            document.getElementById("fecharMensagem").onclick = () => fechar(modalMsg);
 
             // enviar mensagem
-            form.addEventListener('submit', function(e) {
+            document.getElementById("formMensagem").addEventListener("submit", function(e) {
                 e.preventDefault();
 
-                const mensagem = textarea.value.trim();
+                const msg = document.getElementById("mensagemTexto").value.trim();
 
-                if (!mensagem) {
+                if (!msg) {
                     alert("Digite uma mensagem!");
                     return;
                 }
 
-                // 🔥 AQUI depois você salva no banco
-                console.log("Enviando para ID:", usuarioId);
-                console.log("Mensagem:", mensagem);
-
                 alert("Mensagem enviada com sucesso!");
-
-                modalMsg.style.display = 'none';
+                fechar(modalMsg);
             });
 
-        });
-    </script>
-
-    <!-- script do modal para cadastrar moderadorr -->
-
-    <script>
-        const modal = document.getElementById('modal');
-        const abrir = document.getElementById('abrirModal');
-        const fechar = document.getElementById('fecharModal');
-
-        abrir.addEventListener('click', () => {
-            modal.style.display = 'flex';
-        });
-
-        fechar.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        // fechar clicando fora
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    </script>
-
-    <!-- alerta para todos os campos serem preenchidos -->
-    <script>
-        document.querySelector(".form-animal").addEventListener("submit", function(e) {
-            let valido = true;
-
-            // remove erros antigos
-            document.querySelectorAll(".erro").forEach(el => el.classList.remove("erro"));
-
-            // pega todos os campos obrigatórios
-            const campos = this.querySelectorAll("[required]");
-
-            campos.forEach(campo => {
-                if (!campo.value || campo.value.trim() === "") {
-
-                    if (campo.type === "hidden") {
-                        campo.closest(".dropdown").classList.add("erro");
-                    } else {
-                        campo.classList.add("erro");
-                    }
-
-                    valido = false;
-                }
-            });
-
-            // valida radio (porque é diferente)
-            const radios = this.querySelectorAll("input[type='radio'][required]");
-            const nomes = [...new Set([...radios].map(r => r.name))];
-
-            nomes.forEach(nome => {
-                const marcado = this.querySelector(`input[name="${nome}"]:checked`);
-                if (!marcado) {
-                    valido = false;
-
-                    // marca todos do grupo
-                    this.querySelectorAll(`input[name="${nome}"]`).forEach(r => {
-                        r.parentElement.classList.add("erro");
-                    });
-                }
-            });
-
-            if (!valido) {
-                e.preventDefault();
-                alert("Preencha todos os campos obrigatórios!");
-            } else {
-                // aqui depois você vai salvar no banco
-                alert("Moderador cadastrado com sucesso!");
-            }
-        });
-    </script>
-
-    <!-- olhinho da senha -->
-    <script>
-        function toggleSenha() {
-
-            const senha = document.getElementById("senha");
-            const icone = document.querySelector(".olho");
-
-            if (senha.type === "password") {
-                senha.type = "text";
-                icone.textContent = "visibility_off";
-            } else {
-                senha.type = "password";
-                icone.textContent = "visibility";
-            }
-
-        }
-    </script>
-
-    <!-- script para historico -->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            const modalHist = document.getElementById("modalHistorico");
-            const fecharHist = document.getElementById("fecharHistorico");
-            const conteudo = document.getElementById("conteudoHistorico");
-
+            // HISTORICO
             document.querySelectorAll('.btn-acao.historico').forEach(botao => {
 
                 botao.addEventListener('click', function() {
 
                     const id = this.dataset.id;
+                    const nome = this.dataset.nome;
 
-                    modalHist.style.display = 'flex';
+                    const conteudo = document.getElementById("conteudoHistorico");
+                    const nomeHistorico = document.getElementById("nomeHistorico");
 
-                    // 🔥 SIMULAÇÃO (depois conecta no banco)
+                    // 👉 nome no título
+                    nomeHistorico.textContent = nome;
+
+                    // 👉 abre modal
+                    abrir(modalHist);
+
+                    // 🔥 dados simulados
                     let dados = [{
                             acao: "Criação",
                             desc: "Moderador criado",
@@ -366,41 +265,49 @@ include './../../components/head/head.php';
                             desc: "Alterou dados",
                             data: "06/02 14:30"
                         },
-                        {
-                            acao: "Suspensão",
-                            desc: "Suspendeu usuário",
-                            data: "07/02 18:20"
-                        }
+
                     ];
 
                     conteudo.innerHTML = "";
 
                     dados.forEach(item => {
                         conteudo.innerHTML += `
-                    <div class="linha">
-                        <span>${item.acao}</span>
-                        <span>${item.desc}</span>
-                        <span>${item.data}</span>
-                    </div>
-                `;
+                <div class="linha">
+                    <span>${item.acao}</span>
+                    <span>${item.desc}</span>
+                    <span>${item.data}</span>
+                </div>
+            `;
                     });
 
                 });
 
             });
+            // SUSPENDER
+            document.querySelectorAll('.btn-acao.suspender').forEach(botao => {
+                botao.addEventListener('click', function() {
+                    let linha = this.closest('.linha');
+                    let status = linha.querySelector('.status');
+                    let icone = this.querySelector('i');
 
-            fecharHist.addEventListener('click', () => {
-                modalHist.style.display = 'none';
+                    if (status.classList.contains('ativo')) {
+                        status.classList.replace('ativo', 'suspenso');
+                        status.textContent = 'Suspenso';
+                        icone.classList.replace('fa-lock', 'fa-lock-open');
+                    } else {
+                        status.classList.replace('suspenso', 'ativo');
+                        status.textContent = 'Ativo';
+                        icone.classList.replace('fa-lock-open', 'fa-lock');
+                    }
+                });
             });
 
-            modalHist.addEventListener('click', (e) => {
-                if (e.target === modalHist) {
-                    modalHist.style.display = 'none';
-                }
-            });
+            // FECHAR CLICANDO FORA (CORRIGIDO)
+            [modalCriar, modalEditar, modalMsg, modalHist].forEach(fecharFora);
 
         });
     </script>
+
 </body>
 
 </html>

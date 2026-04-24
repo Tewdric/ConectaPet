@@ -46,7 +46,10 @@ $acoes = $acoes ?? []; // 👈 NOVO
                             <?php endif; ?>
 
                             <?php if ($acao == 'historico'): ?>
-                                <button class="btn-acao historico" data-id="<?= $u['id'] ?>" title="Histórico">
+                                <button class="btn-acao historico"
+                                    data-id="<?= $u['id'] ?>"
+                                    data-nome="<?= $u['nome'] ?>"
+                                    title="Histórico">
                                     <i class="fas fa-clock"></i>
                                 </button>
                             <?php endif; ?>
@@ -61,7 +64,12 @@ $acoes = $acoes ?? []; // 👈 NOVO
                             <?php endif; ?>
 
                             <?php if ($acao == 'editar'): ?>
-                                <button class="btn-acao editar" data-id="<?= $u['id'] ?>" title="Editar">
+                                <button class="btn-acao editar"
+                                    data-id="<?= $u['id'] ?>"
+                                    data-nome="<?= $u['nome'] ?>"
+                                    data-email="<?= $u['email'] ?? '' ?>"
+                                    data-telefone="<?= $u['telefone'] ?? '' ?>"
+                                    title="Editar">
                                     <i class="fas fa-pen"></i>
                                 </button>
                             <?php endif; ?>
