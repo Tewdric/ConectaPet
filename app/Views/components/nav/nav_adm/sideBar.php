@@ -1,5 +1,6 @@
 <?php
 $currentPage = basename($_SERVER['PHP_SELF']);
+$totalNotificacoes = 3; // exemplo
 ?>
 
 <div class="sidebar">
@@ -19,7 +20,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         </li>
 
         <li class="<?= $currentPage == 'contas.php' ? 'active' : '' ?>">
-            <a href="./contas.php    ">
+            <a href="./contas.php">
                 <i class="fas fa-users"></i> Admin. Contas
             </a>
         </li>
@@ -42,6 +43,17 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </a>
         </li>
 
+        <!-- NOTIFICAÇÕES -->
+        <li class="<?= $currentPage == 'notificacoes.php' ? 'active' : '' ?>">
+            <a href="./notificacoes.php">
+                <i class="fas fa-bell"></i> Notificações
+
+                <?php if($totalNotificacoes > 0): ?>
+                    <span class="badge"><?= $totalNotificacoes ?></span>
+                <?php endif; ?>
+            </a>
+        </li>
+
         <li class="<?= $currentPage == 'perfil.php' ? 'active' : '' ?>">
             <a href="./perfil.php">
                 <i class="fas fa-user"></i> Perfil
@@ -54,8 +66,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <i class="fas fa-sign-out-alt"></i> Sair
             </a>
         </li>
-
-
 
     </ul>
 
