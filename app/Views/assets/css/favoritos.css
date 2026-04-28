@@ -1,0 +1,172 @@
+.favoritos-container {
+    padding: 140px 40px 40px;
+    background: #fffaf7;
+    min-height: 100vh;
+}
+
+/* topo */
+.topo-favoritos {
+    margin-bottom: 30px;
+}
+
+.titulo-fav {
+    font-size: 32px;
+    color: #ff914d;
+    margin-bottom: 20px;
+}
+
+/* filtros */
+.filtros-favoritos {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* pesquisa */
+.box-pesquisa {
+    display: flex;
+    align-items: center;
+    width: 320px;
+    /* antes 380 */
+    height: 52px;
+    /* antes 60 */
+    background: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
+}
+
+.box-pesquisa .input-pesquisa-fav {
+    flex: 1;
+    margin: 0 !important;
+
+    height: 52px !important;
+    line-height: 52px;
+    font-size: 18px;
+    padding: 0 18px !important;
+
+    border: none !important;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+
+    background: transparent;
+    border-radius: 50px 0 0 50px !important;
+}
+
+/* placeholder centralizado */
+.box-pesquisa .input-pesquisa-fav::placeholder {
+    line-height: 52px;
+}
+
+/* input só dessa tela */
+.input-pesquisa-fav {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 25px !important;
+    font-size: 22px !important;
+    color: #888;
+    background: transparent;
+}
+
+.input-pesquisa-fav::placeholder {
+    color: #b3b3b3;
+}
+
+/* botão só dessa tela */
+.btn-pesquisa-fav {
+    /*     width: 95px;
+    height: 100%; */
+    border: none;
+    background: #FFD471;
+    /* color: white; */
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+
+    width: 75px;
+    height: 52px;
+    font-size: 24px;
+}
+
+/* select */
+.select-animal {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+    cursor: pointer;
+    outline: none;
+}
+
+/* cards */
+.favoritos-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card-favorito {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.card-favorito img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 18px;
+}
+
+.card-info h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.card-info p {
+    color: #666;
+}
+
+.card-info span {
+    color: #999;
+    display: block;
+    margin-top: 5px;
+}
+
+/* botões */
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-ver,
+.btn-remover {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-ver {
+    background: #f4ae19;
+    color: white;
+}
+
+.btn-remover{
+    background: #fdf2eb;
+    color: #f4ae19;
+    border: 2px solid #f4ae19;
+    border-radius: 10px;
+}
