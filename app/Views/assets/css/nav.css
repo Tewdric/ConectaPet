@@ -64,15 +64,25 @@
 
   .navbar-social {
     display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
     align-items: center;
+    gap: 10px; /* espaçamento entre os itens */
     list-style: none;
+  }
 
-    li a img {
-      transition: 0.2s linear;
-      width: 80%;
-    }
+  .navbar-social li {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-social img {
+    width: 32px; /* tamanho fixo */
+    height: 32px; /* mantém proporção */
+    object-fit: contain;
+  }
+
+  .navbar-social button {
+    height: 32px;
+    padding: 0 12px;
   }
 
   /* Ícone sandwich (escondido no desktop) */

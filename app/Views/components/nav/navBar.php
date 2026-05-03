@@ -30,10 +30,10 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <li><a href="#"><img src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="instagram" /></a></li>
         <li>
             <a href="#"
-               id="acc-trigger"
-               aria-label="Abrir painel de acessibilidade"
-               aria-expanded="false"
-               aria-controls="acc-panel">
+                id="acc-trigger"
+                aria-label="Abrir painel de acessibilidade"
+                aria-expanded="false"
+                aria-controls="acc-panel">
                 <img src="https://img.icons8.com/ios/50/accessibility2.png" alt="accessibility" />
             </a>
         </li>
@@ -51,25 +51,27 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <li><a href="sobre.php">Sobre</a></li>
         <li><a href="./../../pages/user/favoritos.php">Favoritos</a></li>
         <li><a href="./../../pages/user/contato.php">Contato</a></li>
-        <li><a href="./../../pages/user/login.php">Login</a></li>
+        <li><a href="./../../pages/user/login.php">Publicar</a></li>
 
     </div>
 
     <div class="navbar-social">
-         <a href="./perfil_usuario.php">
-            <img src="../../assets/img/user.png" class="nav-icon">
-        </a>
-                <li>
+        <li>
+            <a href="./perfil_usuario.php">
+                <img src="../../assets/img/user.png" class="nav-icon" alt="user-icon">
+            </a>
+        </li>
+        <li>
             <a href="#"
-               id="acc-trigger"
-               aria-label="Abrir painel de acessibilidade"
-               aria-expanded="false"
-               aria-controls="acc-panel">
+                id="acc-trigger"
+                aria-label="Abrir painel de acessibilidade"
+                aria-expanded="false"
+                aria-controls="acc-panel">
                 <img src="https://img.icons8.com/ios/50/accessibility2.png" alt="accessibility" />
             </a>
         </li>
         <button onclick="logout()">Sair</button>
-        
+
     </div>
 </nav>
 
@@ -82,12 +84,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         const navDeslogado = document.getElementById("navbar-deslogado");
         const navLogado = document.getElementById("navbar-logado");
 
-        if(acess){
-            acess.addEventListener('click', () =>{
+        if (acess) {
+            acess.addEventListener('click', () => {
                 modal_acess.showModal();
             })
         }
-            
+
         if (logado === "true") {
             navDeslogado.style.display = "none";
             navLogado.style.display = "flex";
@@ -99,8 +101,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
     function logout() {
         localStorage.removeItem('login');
-         window.location.href = "./home.php";
+        window.location.href = "./home.php";
     }
-
-
 </script>
