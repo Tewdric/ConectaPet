@@ -1,0 +1,62 @@
+
+.container {
+    display: flex;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* CARD PADRÃO */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* PERFIL */
+.perfil-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dados p {
+    margin: 5px 0;
+}
+
+/* CARDS DE POSTAGEM */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.box {
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.box h4 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.azul { background: #4db6ac; }
+.rosa { background: #ef9a9a; }
+.roxo { background: #b39ddb; }
+.verde { background: #81c784; }
