@@ -44,8 +44,8 @@ $totalNotificacoes = 3; // exemplo
         </li>
 
         <!-- NOTIFICAÇÕES -->
-        <li class="<?= $currentPage == 'notificacoes.php' ? 'active' : '' ?>">
-            <a href="./notificacoes.php">
+        <li class="<?= $currentPage == 'not_adm.php' ? 'active' : '' ?>">
+            <a href="./not_adm.php">
                 <i class="fas fa-bell"></i> Notificações
 
                 <?php if($totalNotificacoes > 0): ?>
@@ -54,8 +54,8 @@ $totalNotificacoes = 3; // exemplo
             </a>
         </li>
 
-        <li class="<?= $currentPage == 'perfil.php' ? 'active' : '' ?>">
-            <a href="./perfil.php">
+        <li class="<?= $currentPage == 'perfil-adm.php' ? 'active' : '' ?>">
+            <a href="./perfil-adm.php">
                 <i class="fas fa-user"></i> Perfil
             </a>
         </li>

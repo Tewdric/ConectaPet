@@ -19,7 +19,8 @@ $posts = [
 ?>
 
 <?php
-$titulo = "Notificações";
+$titulo = "Perfil adm
+";
 include './../../components/head/head.php';
 ?>
 
@@ -37,8 +38,7 @@ include './../../components/head/head.php';
                 <h3>Informações Pessoais</h3>
 
                 <div class="perfil-info">
-                    <img src="<?= $usuario['foto'] ?>" class="foto">
-
+                    <img src="./../../assets/img/adm-foto.jpg" class="foto-adm" alt="">
                     <div class="dados">
                         <p><strong>Nome:</strong> <?= $usuario['nome'] ?></p>
                         <p><strong>Email:</strong> <?= $usuario['email'] ?></p>
@@ -51,10 +51,10 @@ include './../../components/head/head.php';
             </section>
 
             <!-- POSTAGENS -->
-            <section class="card">
+            <section class="card-adm">
                 <h3>Postagens</h3>
 
-                <div class="cards">
+                <div class="cards-adm">
                     <div class="box azul">
                         <h4><?= $posts['total'] ?></h4>
                         <p>Total de publicações</p>
